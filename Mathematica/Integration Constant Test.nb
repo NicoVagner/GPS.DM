@@ -1,0 +1,863 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     34061,        853]
+NotebookOptionsPosition[     30827,        802]
+NotebookOutlinePosition[     31224,        818]
+CellTagsIndexPosition[     31181,        815]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", "1."}]}], " ", "Define", " ", "Parameters", " ", "and", " ",
+      "Helper", " ", 
+     RowBox[{"Functions", "--"}]}], "-"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"Clear", " ", "previous", " ", "definitions"}], "*)"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", "Parameters", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"vL", "=", "220"}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"km", "/", "s"}], ",", 
+     RowBox[{
+      RowBox[{"Earth", "'"}], "s", " ", "speed", " ", "relative", " ", "to", " ",
+       "halo"}]}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"v0", "=", "220"}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"km", "/", "s"}], ",", 
+     RowBox[{"DM", " ", "halo", " ", "characteristic", " ", "speed"}], ",", 
+     RowBox[{
+      RowBox[{"often", " ", "v0"}], "=", 
+      RowBox[{"vL", " ", "for", " ", "SHM"}]}]}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"ve", "=", "544"}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"km", "/", "s"}], ",", 
+     RowBox[{"Galactic", " ", "escape", " ", "velocity"}]}], "*)"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<Parameters:\>\"", "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<vL (Earth speed rel. to halo) = \>\"", ",", "vL", 
+      ",", "\"\< km/s\>\""}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<v0 (DM halo characteristic speed) = \>\"", ",", "v0", 
+      ",", "\"\< km/s\>\""}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<ve (Galactic escape velocity) = \>\"", ",", "ve", 
+      ",", "\"\< km/s\>\""}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+    "Print", "[", "\"\<------------------------------------\>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Maximum", " ", "perpendicular", " ", "velocity", " ", "due", " ", "to", " ",
+      "escape", " ", "velocity", " ", "constraint"}], "*)"}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x_", "?", "NumericQ"}], " ", "ensures", " ", "this", " ", 
+      "only", " ", "evaluates", " ", "for", " ", "numerical", " ", "x"}], ",", 
+     RowBox[{"useful", " ", "for", " ", "NIntegrate"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"vPerpMax", "[", 
+      RowBox[{"x_", "?", "NumericQ"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"valUnderSqrt", ",", "result"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"valUnderSqrt", "=", 
+         RowBox[{
+          RowBox[{"ve", "^", "2"}], "-", 
+          RowBox[{
+           RowBox[{"vL", "^", "2"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{"x", "^", "2"}]}], ")"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"valUnderSqrt", "<", "0"}], ",", "0", ",", 
+          RowBox[{
+           RowBox[{"result", "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "vL"}], " ", "x"}], "+", 
+             RowBox[{"Sqrt", "[", "valUnderSqrt", "]"}]}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"result", "<", "0"}], ",", "0", ",", "result"}], 
+            "]"}]}]}], "]"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Test", " ", "vPerpMax", " ", 
+     RowBox[{"(", 
+      RowBox[{
+      "these", " ", "should", " ", "match", " ", "your", " ", "analytical", " ",
+        "expectations"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<Testing vPerpMax[x]:\>\"", "]"}], ";"}], "\n", 
+   
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<vPerpMax[-1] (x = -1, head-on, expected ve + vL or 0 if \
+negative) = \>\"", ",", 
+      RowBox[{"vPerpMax", "[", 
+       RowBox[{"-", "1"}], "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<vPerpMax[1] (x = 1, receding, expected ve - vL) = \>\"", ",", 
+      RowBox[{"vPerpMax", "[", "1", "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<vPerpMax[0] (x = 0, perpendicular, expected Sqrt[ve^2 - \
+vL^2]) = \>\"", ",", 
+      RowBox[{"vPerpMax", "[", "0", "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+    "Print", "[", "\"\<------------------------------------\>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Unnormalized", " ", "PDF", " ", 
+     RowBox[{"(", 
+      RowBox[{
+      "proportional", " ", "to", " ", "v_perp", "*", "flux", " ", "factor", "*",
+        "Maxwellian"}], ")"}]}], "*)"}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"vPerp_", "?", "NumericQ"}], ",", 
+     RowBox[{
+      RowBox[{"x_", "?", "NumericQ"}], " ", "ensures", " ", "evaluation", " ",
+       "only", " ", "for", " ", "numerical", " ", "inputs"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"unnormalizedPdf", "[", 
+      RowBox[{
+       RowBox[{"vPerp_", "?", "NumericQ"}], ",", 
+       RowBox[{"x_", "?", "NumericQ"}]}], "]"}], ":=", 
+     RowBox[{"vPerp", "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"vPerp", "+", 
+            RowBox[{"vL", " ", "x"}]}], ")"}], "^", "2"}]}], "/", 
+        RowBox[{"v0", "^", "2"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"--", 
+       RowBox[{"-", "2."}]}], " ", "Manually", " ", "Check", " ", "the", " ", 
+      "Normalization", " ", 
+      RowBox[{"Integral", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "Print", "[", "\"\<Calculating the integral of the unnormalized PDF (this \
+is 1/C)...\>\"", "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<This step can take some time.\>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Perform", " ", "the", " ", "numerical", " ", "integration"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"integralOfUnnormalizedPdf", "=", 
+     RowBox[{"NIntegrate", "[", 
+      RowBox[{
+       RowBox[{"unnormalizedPdf", "[", 
+        RowBox[{"vP", ",", "xVal"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"xVal", ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Integrate", " ", "x", " ", "from"}], "-", 
+         RowBox[{"1", " ", "to", " ", "1"}]}], "*)"}], 
+       RowBox[{"{", 
+        RowBox[{"vP", ",", "0", ",", 
+         RowBox[{"vPerpMax", "[", "xVal", "]"}]}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Integrate", " ", "v_perp", " ", "from", " ", "0", " ", "to", " ", 
+         RowBox[{"vPerpMax", "[", "xVal", "]"}]}], "*)"}], 
+       RowBox[{"Method", "->", "\"\<AdaptiveMonteCarlo\>\""}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Good", " ", "for", " ", "potentially", " ", "complex", " ", 
+         "regions"}], "*)"}], 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Method", "->", "\"\<LocalAdaptive\>\""}], ","}], 
+        RowBox[{"(*", 
+         RowBox[{"Alternative", ",", 
+          RowBox[{
+          "sometimes", " ", "faster", " ", "or", " ", "more", " ", 
+           "stable"}]}], "*)"}], "*)"}], 
+       RowBox[{"PrecisionGoal", "->", "7"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Desired", " ", "precision"}], "*)"}], 
+       RowBox[{"AccuracyGoal", "->", "7"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Desired", " ", "accuracy"}], "*)"}], 
+       RowBox[{"MaxRecursion", "->", "12"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "How", " ", "deep", " ", "Mathematica", " ", "should", " ", 
+         "subdivide"}], "*)"}], 
+       RowBox[{"WorkingPrecision", "->", "MachinePrecision"}]}], " ", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Or", " ", "a", " ", "higher", " ", "precision", " ", "like", " ", 
+        "30", " ", "if", " ", "needed"}], "*)"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Integral of unnormalized PDF = \>\"", ",", 
+      "integralOfUnnormalizedPdf"}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"integralOfUnnormalizedPdf", ">", "0"}], ",", 
+      RowBox[{
+       RowBox[{"normalizationConstantC", "=", 
+        RowBox[{"1", "/", "integralOfUnnormalizedPdf"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Deduced Normalization Constant C = 1 / (Integral Result) \
+= \>\"", ",", "normalizationConstantC"}], "]"}]}], ",", 
+      RowBox[{
+      "Print", "[", "\"\<Error: Integral is not positive, cannot calculate C.\
+\>\"", "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+    "Print", "[", "\"\<------------------------------------\>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"--", 
+       RowBox[{"-", "3."}]}], " ", "Define", " ", "the", " ", "Normalized", " ",
+       "PDF", " ", "and", " ", "Test", " ", 
+      RowBox[{"It", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"ValueQ", "[", "normalizationConstantC", "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"normalizedPdf", "[", 
+         RowBox[{
+          RowBox[{"vPerp_", "?", "NumericQ"}], ",", 
+          RowBox[{"x_", "?", "NumericQ"}]}], "]"}], ":=", 
+        RowBox[{"normalizationConstantC", "*", 
+         RowBox[{"unnormalizedPdf", "[", 
+          RowBox[{"vPerp", ",", "x"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"Print", "[", "\"\<Normalized PDF defined.\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Test", " ", "the", " ", "normalized", " ", "PDF", " ", "at", " ", 
+         "a", " ", "few", " ", "points"}], "*)"}], 
+       RowBox[{
+       "Print", "[", "\"\<Testing normalized PDF at some points:\>\"", "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<P(vPerp=100, x=0) = \>\"", ",", 
+         RowBox[{"normalizedPdf", "[", 
+          RowBox[{"100", ",", "0"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<P(vPerp=300, x=-0.5) = \>\"", ",", 
+         RowBox[{"normalizedPdf", "[", 
+          RowBox[{"300", ",", 
+           RowBox[{"-", "0.5"}]}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Test", " ", "at", " ", "a", " ", "boundary"}], "-", 
+          RowBox[{"should", " ", "be", " ", "0", " ", "if", " ", "vPerp"}]}], 
+         ">", 
+         RowBox[{
+          RowBox[{"vPerpMax", "[", "x", "]"}], " ", "or", " ", "close", " ", 
+          "to", " ", "it"}]}], "*)"}], 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<vPerpMax for x=0.5 is: \>\"", ",", 
+         RowBox[{"vPerpMax", "[", "0.5", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<P(vPerp=vPerpMax[0.5] + 1, x=0.5) = \>\"", ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"vPerpMax", "[", "0.5", "]"}], "+", "1"}], "<=", 
+            RowBox[{"vPerpMax", "[", "0.5", "]"}]}], ",", 
+           RowBox[{"normalizedPdf", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vPerpMax", "[", "0.5", "]"}], "+", "1"}], ",", "0.5"}],
+             "]"}], ",", "\"\<Outside domain (expected 0 or very small if \
+checking slightly inside)\>\""}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{
+       "Print", "[", "\"\<------------------------------------\>\"", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"--", 
+           RowBox[{"-", "4."}]}], " ", "Manually", " ", "Check", " ", "that", 
+          " ", "the", " ", "NORMALIZED", " ", "PDF", " ", "Integrates", " ", 
+          "to", " ", 
+          RowBox[{"1", "--"}]}], "-"}], "*)"}], 
+       RowBox[{
+       "Print", 
+        "[", "\"\<Checking if the integral of the NORMALIZED PDF is 1...\>\"",
+         "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", "\"\<This step can also take some time.\>\"", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"integralOfNormalizedPdf", "=", 
+        RowBox[{"NIntegrate", "[", 
+         RowBox[{
+          RowBox[{"normalizedPdf", "[", 
+           RowBox[{"vP", ",", "xVal"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"xVal", ",", 
+            RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"vP", ",", "0", ",", 
+            RowBox[{"vPerpMax", "[", "xVal", "]"}]}], "}"}], ",", 
+          RowBox[{"Method", "->", "\"\<AdaptiveMonteCarlo\>\""}], ",", 
+          RowBox[{"PrecisionGoal", "->", "6"}], ",", 
+          RowBox[{"AccuracyGoal", "->", "6"}], ",", 
+          RowBox[{"MaxRecursion", "->", "10"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Integral of NORMALIZED PDF = \>\"", ",", 
+         "integralOfNormalizedPdf"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", "\"\<This value should be very close to 1.\>\"", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", "\"\<------------------------------------\>\"", "]"}], 
+       ";"}], ",", 
+      RowBox[{
+       RowBox[{
+       "Print", 
+        "[", "\"\<Normalized PDF not defined because normalization constant C \
+could not be calculated.\>\"", "]"}], ";"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", "5."}]}], " ", 
+     RowBox[{"Optional", ":", 
+      RowBox[{
+       RowBox[{"Plotting", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"can", " ", "be", " ", "slow", " ", "if", " ", "re"}], "-", 
+           RowBox[{"evaluating", " ", "many", " ", "times"}]}], ")"}], 
+         "--"}]}], "-"}]}]}], "*)"}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "You", " ", "can", " ", "uncomment", " ", "this", " ", "section", " ", 
+     "to", " ", "generate", " ", "plots", " ", "directly", " ", "in", " ", 
+     "this", " ", "manual", " ", "check", " ", "notebook"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"ValueQ", "[", "normalizedPdf", "]"}], ",", 
+       RowBox[{
+        RowBox[{"Print", "[", "\"\<Generating Density Plot...\>\"", "]"}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"densityPlot", "=", 
+         RowBox[{"DensityPlot", "[", 
+          RowBox[{
+           RowBox[{"normalizedPdf", "[", 
+            RowBox[{"vP", ",", "xVal"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"xVal", ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"vP", ",", "0", ",", 
+             RowBox[{"ve", "+", "vL"}]}], "}"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{
+            "Plot", " ", "up", " ", "to", " ", "absolute", " ", "max", " ", 
+             "v_perp"}], "*)"}], 
+           RowBox[{"PlotRange", "->", "All"}], ",", 
+           RowBox[{"ColorFunction", "->", "\"\<Viridis\>\""}], ",", 
+           RowBox[{"PlotLegends", "->", "Automatic"}], ",", 
+           RowBox[{"FrameLabel", "->", 
+            RowBox[{"{", 
+             
+             RowBox[{"\"\<x = Cos[\[Theta]]\>\"", 
+              ",", "\"\<v\[UpTee] (km/s)\>\""}], "}"}]}], ",", 
+           RowBox[{"PlotLabel", "->", "\"\<Joint PDF P(v\[UpTee], x)\>\""}], ",", 
+           RowBox[{"RegionFunction", "->", 
+            RowBox[{"Function", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"x", ",", "vp", ",", "fval"}], "}"}], ",", 
+              RowBox[{"0", "<=", "vp", "<=", 
+               RowBox[{"vPerpMax", "[", "x", "]"}]}]}], "]"}]}], ",", 
+           RowBox[{"PlotPoints", "->", "50"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{
+            "Lower", " ", "for", " ", "faster", " ", "manual", " ", 
+             "checks"}], "*)"}], 
+           RowBox[{"MaxRecursion", "->", "2"}]}], "  ", 
+          RowBox[{"(*", 
+           RowBox[{
+           "Lower", " ", "for", " ", "faster", " ", "manual", " ", "checks"}],
+            "*)"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "densityPlot", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "\"\<Generating Contour Plot...\>\"", "]"}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"contourPlot", "=", 
+         RowBox[{"ContourPlot", "[", 
+          RowBox[{
+           RowBox[{"normalizedPdf", "[", 
+            RowBox[{"vP", ",", "xVal"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"xVal", ",", 
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"vP", ",", "0", ",", 
+             RowBox[{"ve", "+", "vL"}]}], "}"}], ",", 
+           RowBox[{"PlotRange", "->", "All"}], ",", 
+           RowBox[{"ColorFunction", "->", "\"\<Viridis\>\""}], ",", 
+           RowBox[{"Contours", "->", "10"}], ",", 
+           RowBox[{"PlotLegends", "->", "Automatic"}], ",", 
+           RowBox[{"FrameLabel", "->", 
+            RowBox[{"{", 
+             
+             RowBox[{"\"\<x = Cos[\[Theta]]\>\"", 
+              ",", "\"\<v\[UpTee] (km/s)\>\""}], "}"}]}], ",", 
+           RowBox[{
+           "PlotLabel", "->", "\"\<Contour Plot of P(v\[UpTee], x)\>\""}], ",", 
+           RowBox[{"RegionFunction", "->", 
+            RowBox[{"Function", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"x", ",", "vp", ",", "fval"}], "}"}], ",", 
+              RowBox[{"0", "<=", "vp", "<=", 
+               RowBox[{"vPerpMax", "[", "x", "]"}]}]}], "]"}]}], ",", 
+           RowBox[{"PlotPoints", "->", "50"}], ",", 
+           RowBox[{"MaxRecursion", "->", "2"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "contourPlot", "]"}], ";"}], ",", 
+       RowBox[{
+       "Print", 
+        "[", "\"\<Plotting skipped as normalized PDF is not defined.\>\"", 
+        "]"}]}], "]"}], ";"}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.9578787042320004`*^9, 3.95787870423454*^9}},
+ CellLabel->
+  "In[144]:=",ExpressionUUID->"ed5e1c06-c39c-410c-b2f0-dce58e48a394"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Parameters:\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.95787902731048*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"3e4c8e85-a8f2-4799-be16-7596bed623b9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"vL (Earth speed rel. to halo) = \"\>", "\[InvisibleSpace]", 
+   "220", "\[InvisibleSpace]", "\<\" km/s\"\>"}],
+  SequenceForm["vL (Earth speed rel. to halo) = ", 220, " km/s"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027310904*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"cfb04954-bf42-4807-a633-27bd4482332a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"v0 (DM halo characteristic speed) = \"\>", "\[InvisibleSpace]",
+    "220", "\[InvisibleSpace]", "\<\" km/s\"\>"}],
+  SequenceForm["v0 (DM halo characteristic speed) = ", 220, " km/s"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790273113537`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"0720aa8c-9d8a-464c-ab34-dabd844879d1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"ve (Galactic escape velocity) = \"\>", "\[InvisibleSpace]", 
+   "544", "\[InvisibleSpace]", "\<\" km/s\"\>"}],
+  SequenceForm["ve (Galactic escape velocity) = ", 544, " km/s"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790273116417`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"c981e170-ac9d-4782-839e-0a658a0058b9"],
+
+Cell[BoxData["\<\"------------------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027311913*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"08924d1b-4ba3-44ed-a375-759dc38ed6e9"],
+
+Cell[BoxData["\<\"Testing vPerpMax[x]:\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.95787902731217*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"76c8c995-8ab3-4f15-b09c-d8426b3950c9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"vPerpMax[-1] (x = -1, head-on, expected ve + vL or 0 if \
+negative) = \"\>", "\[InvisibleSpace]", "764"}],
+  SequenceForm[
+  "vPerpMax[-1] (x = -1, head-on, expected ve + vL or 0 if negative) = ", 764],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027312429*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"88934c85-d984-462c-9199-5b899a8a66de"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"vPerpMax[1] (x = 1, receding, expected ve - vL) = \"\>", "\[InvisibleSpace]",
+    "324"}],
+  SequenceForm["vPerpMax[1] (x = 1, receding, expected ve - vL) = ", 324],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027312702*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"2a1cde0d-0c8d-4f73-a7b8-7d5dc32a431d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"vPerpMax[0] (x = 0, perpendicular, expected Sqrt[ve^2 - vL^2]) \
+= \"\>", "\[InvisibleSpace]", 
+   RowBox[{"36", " ", 
+    SqrtBox["191"]}]}],
+  SequenceForm[
+  "vPerpMax[0] (x = 0, perpendicular, expected Sqrt[ve^2 - vL^2]) = ", 36 
+   191^Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790273129683`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"9588ead9-9b33-48f5-9d60-c19719b3735f"],
+
+Cell[BoxData["\<\"------------------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027313237*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"62f2cfac-b494-4dbe-acf4-8e0030c14ac5"],
+
+Cell[BoxData["\<\"Calculating the integral of the unnormalized PDF (this is \
+1/C)...\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.95787902731348*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"62a68a06-0c1f-469c-9b49-f4008684f843"],
+
+Cell[BoxData["\<\"This step can take some time.\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879027313736*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"f3e2b721-4e1c-474b-b764-29f80b0b9605"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "maxp", 
+   "\"The integral failed to converge after \
+\\!\\(\\*RowBox[{\\\"1000100\\\"}]\\) integrand evaluations. NIntegrate \
+obtained \\!\\(\\*RowBox[{\\\"62906.60118851289`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"1.4378526834570764`\\\"}]\\) for the integral and error \
+estimates.\"", 2, 162, 12, 23656979547494654132, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{
+  3.95787871156114*^9, {3.957879016933614*^9, 3.957879033101506*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"af86ecd0-21fa-4b66-934e-a1f0a18f4859"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Integral of unnormalized PDF = \"\>", "\[InvisibleSpace]", 
+   "62906.60118851289`"}],
+  SequenceForm["Integral of unnormalized PDF = ", 62906.60118851289],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790331070232`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"c3d714b0-6f25-45cd-a1e9-4534f9b83a13"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Deduced Normalization Constant C = 1 / (Integral Result) = \
+\"\>", "\[InvisibleSpace]", "0.000015896582888070667`"}],
+  SequenceForm[
+  "Deduced Normalization Constant C = 1 / (Integral Result) = ", 
+   0.000015896582888070667`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033107264*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"fb9a8872-0995-4de4-82ed-ecf5707e23e7"],
+
+Cell[BoxData["\<\"------------------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.95787903310789*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"cb35cbff-9c7b-43e5-a071-0fab05951afe"],
+
+Cell[BoxData["\<\"Normalized PDF defined.\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033108096*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"178935c7-65ff-4d3a-a31b-2a8f971a8a6f"],
+
+Cell[BoxData["\<\"Testing normalized PDF at some points:\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033108293*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"563512dd-2c84-4439-a270-62f41a52b8c3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"P(vPerp=100, x=0) = \"\>", "\[InvisibleSpace]", 
+   "0.0012929255387880633`"}],
+  SequenceForm["P(vPerp=100, x=0) = ", 0.0012929255387880633`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033108501*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"c1c09d2c-48dc-4232-a0d7-9fd8c2c254fb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"P(vPerp=300, x=-0.5) = \"\>", "\[InvisibleSpace]", 
+   "0.0022620321722346863`"}],
+  SequenceForm["P(vPerp=300, x=-0.5) = ", 0.0022620321722346863`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033108713*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"2a3f9d22-da8b-4bea-a7ed-c0a626c77dfe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"vPerpMax for x=0.5 is: \"\>", "\[InvisibleSpace]", 
+   "399.5448949798241`"}],
+  SequenceForm["vPerpMax for x=0.5 is: ", 399.5448949798241],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033108924*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"2d694dbe-028e-405d-8778-9109a24f0c8c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"P(vPerp=vPerpMax[0.5] + 1, x=0.5) = \"\>", 
+   "\[InvisibleSpace]", "\<\"Outside domain (expected 0 or very small if \
+checking slightly inside)\"\>"}],
+  SequenceForm[
+  "P(vPerp=vPerpMax[0.5] + 1, x=0.5) = ", 
+   "Outside domain (expected 0 or very small if checking slightly inside)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033109129*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"18f93a96-5ab1-42c2-bd10-948446ef8918"],
+
+Cell[BoxData["\<\"------------------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790331093493`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"4748b23e-a4b4-4ddf-b56a-e6881150a6d3"],
+
+Cell[BoxData["\<\"Checking if the integral of the NORMALIZED PDF is \
+1...\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790331095457`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"3a41ed04-41fa-4c55-8c59-77cc638e1589"],
+
+Cell[BoxData["\<\"This step can also take some time.\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879033109748*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"5bef041d-e57d-4c9b-a4dc-214372c56447"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate", "maxp", 
+   "\"The integral failed to converge after \
+\\!\\(\\*RowBox[{\\\"1000100\\\"}]\\) integrand evaluations. NIntegrate \
+obtained \\!\\(\\*RowBox[{\\\"0.9999952851504257`\\\"}]\\) and \
+\\!\\(\\*RowBox[{\\\"0.000023149373091947244`\\\"}]\\) for the integral and \
+error estimates.\"", 2, 166, 13, 23656979547494654132, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{
+  3.95787871156114*^9, {3.957879016933614*^9, 3.9578790394350348`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"3ce56130-e28f-4bd2-adee-29ba5ea4a89a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Integral of NORMALIZED PDF = \"\>", "\[InvisibleSpace]", 
+   "0.9999952851504257`"}],
+  SequenceForm["Integral of NORMALIZED PDF = ", 0.9999952851504257],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790394412603`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"390f4b7f-6c85-4cc1-8028-7f02b758de8e"],
+
+Cell[BoxData["\<\"This value should be very close to 1.\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.957879039441497*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"3dc43165-2460-4bfc-aa4a-5a5b9574ba4f"],
+
+Cell[BoxData["\<\"------------------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.9578787056417847`*^9, {3.9578790111631203`*^9, 3.9578790394425173`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[144]:=",ExpressionUUID->"08bd9831-4242-4d6d-94fd-453d45fe1351"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1728, 1051},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ad856efe-21a5-4a30-af1b-2ac5a9e68dd4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 18931, 470, 1479, "Input",ExpressionUUID->"ed5e1c06-c39c-410c-b2f0-dce58e48a394"],
+Cell[CellGroupData[{
+Cell[19532, 496, 245, 5, 23, "Print",ExpressionUUID->"3e4c8e85-a8f2-4799-be16-7596bed623b9"],
+Cell[19780, 503, 456, 10, 23, "Print",ExpressionUUID->"cfb04954-bf42-4807-a633-27bd4482332a"],
+Cell[20239, 515, 466, 10, 23, "Print",ExpressionUUID->"0720aa8c-9d8a-464c-ab34-dabd844879d1"],
+Cell[20708, 527, 458, 10, 23, "Print",ExpressionUUID->"c981e170-ac9d-4782-839e-0a658a0058b9"],
+Cell[21169, 539, 271, 5, 23, "Print",ExpressionUUID->"08924d1b-4ba3-44ed-a375-759dc38ed6e9"],
+Cell[21443, 546, 254, 5, 23, "Print",ExpressionUUID->"76c8c995-8ab3-4f15-b09c-d8426b3950c9"],
+Cell[21700, 553, 482, 11, 23, "Print",ExpressionUUID->"88934c85-d984-462c-9199-5b899a8a66de"],
+Cell[22185, 566, 445, 10, 23, "Print",ExpressionUUID->"2a1cde0d-0c8d-4f73-a7b8-7d5dc32a431d"],
+Cell[22633, 578, 539, 14, 23, "Print",ExpressionUUID->"9588ead9-9b33-48f5-9d60-c19719b3735f"],
+Cell[23175, 594, 271, 5, 23, "Print",ExpressionUUID->"62f2cfac-b494-4dbe-acf4-8e0030c14ac5"],
+Cell[23449, 601, 301, 6, 23, "Print",ExpressionUUID->"62a68a06-0c1f-469c-9b49-f4008684f843"],
+Cell[23753, 609, 264, 5, 23, "Print",ExpressionUUID->"f3e2b721-4e1c-474b-b764-29f80b0b9605"]
+}, Open  ]],
+Cell[24032, 617, 625, 14, 26, "Message",ExpressionUUID->"af86ecd0-21fa-4b66-934e-a1f0a18f4859"],
+Cell[CellGroupData[{
+Cell[24682, 635, 438, 10, 23, "Print",ExpressionUUID->"c3d714b0-6f25-45cd-a1e9-4534f9b83a13"],
+Cell[25123, 647, 510, 12, 23, "Print",ExpressionUUID->"fb9a8872-0995-4de4-82ed-ecf5707e23e7"],
+Cell[25636, 661, 270, 5, 23, "Print",ExpressionUUID->"cb35cbff-9c7b-43e5-a071-0fab05951afe"],
+Cell[25909, 668, 258, 5, 23, "Print",ExpressionUUID->"178935c7-65ff-4d3a-a31b-2a8f971a8a6f"],
+Cell[26170, 675, 273, 5, 23, "Print",ExpressionUUID->"563512dd-2c84-4439-a270-62f41a52b8c3"],
+Cell[26446, 682, 423, 10, 23, "Print",ExpressionUUID->"c1c09d2c-48dc-4232-a0d7-9fd8c2c254fb"],
+Cell[26872, 694, 429, 10, 23, "Print",ExpressionUUID->"2a3f9d22-da8b-4bea-a7ed-c0a626c77dfe"],
+Cell[27304, 706, 420, 10, 23, "Print",ExpressionUUID->"2d694dbe-028e-405d-8778-9109a24f0c8c"],
+Cell[27727, 718, 568, 13, 23, "Print",ExpressionUUID->"18f93a96-5ab1-42c2-bd10-948446ef8918"],
+Cell[28298, 733, 273, 5, 23, "Print",ExpressionUUID->"4748b23e-a4b4-4ddf-b56a-e6881150a6d3"],
+Cell[28574, 740, 293, 6, 23, "Print",ExpressionUUID->"3a41ed04-41fa-4c55-8c59-77cc638e1589"],
+Cell[28870, 748, 269, 5, 23, "Print",ExpressionUUID->"5bef041d-e57d-4c9b-a4dc-214372c56447"]
+}, Open  ]],
+Cell[29154, 756, 633, 14, 26, "Message",ExpressionUUID->"3ce56130-e28f-4bd2-adee-29ba5ea4a89a"],
+Cell[CellGroupData[{
+Cell[29812, 774, 436, 10, 23, "Print",ExpressionUUID->"390f4b7f-6c85-4cc1-8028-7f02b758de8e"],
+Cell[30251, 786, 272, 5, 23, "Print",ExpressionUUID->"3dc43165-2460-4bfc-aa4a-5a5b9574ba4f"],
+Cell[30526, 793, 273, 5, 23, "Print",ExpressionUUID->"08bd9831-4242-4d6d-94fd-453d45fe1351"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

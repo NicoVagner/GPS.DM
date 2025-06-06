@@ -1,0 +1,2492 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[    122112,       2484]
+NotebookOptionsPosition[    113123,       2377]
+NotebookOutlinePosition[    113562,       2394]
+CellTagsIndexPosition[    113519,       2391]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DEList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "12845", ",", "12863", ",", "12915", ",", "12950", ",", "12965", ",", 
+       "12972", ",", "13150", ",", "13154", ",", "13216", ",", "13604", ",", 
+       "13734", ",", "13752", ",", "13800", ",", "13806", ",", "14134", ",", 
+       "14630", ",", "14673", ",", "14686", ",", "14695", ",", "14791", ",", 
+       "14820", ",", "14841", ",", "14853", ",", "14882", ",", "14893", ",", 
+       "14936", ",", "14960", ",", "14994", ",", "15144", ",", "15251", ",", 
+       "15433", ",", "15491", ",", "15621", ",", "15704", ",", "15774", ",", 
+       "15803", ",", "15876", ",", "15935", ",", "15956", ",", "16044", ",", 
+       "16053", ",", "16066", ",", "16072", ",", "16075", ",", "16081", ",", 
+       "16081", ",", "16125", ",", "16131", ",", "16133", ",", "16154", ",", 
+       "16201", ",", "16222", ",", "16301", ",", "16315", ",", "16336", ",", 
+       "16342", ",", "16356", ",", "16413", ",", "16424", ",", "16430", ",", 
+       "16444", ",", "16446", ",", "16461", ",", "16463", ",", "16470", ",", 
+       "16561", ",", "16601", ",", "16660", ",", "16663", ",", "16664", ",", 
+       "16672", ",", "16710", ",", "16714", ",", "16720", ",", "16725", ",", 
+       "17023", ",", "17060", ",", "17071", ",", "17275", ",", "17311", ",", 
+       "17445", ",", "17673", ",", "17792", ",", "17810", ",", "17812", ",", 
+       "18022", ",", "18104"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "199", ",", "1070", ",", "245", ",", "1073", ",", "329", ",", "103", ",",
+        "1547", ",", "1775", ",", "2614", ",", "2543", ",", "2046", ",", 
+       "1637", ",", "2135", ",", "2543", ",", "914", ",", "2625", ",", "2228",
+        ",", "1832", ",", "738", ",", "1771", ",", "835", ",", "1828", ",", 
+       "352", ",", "711", ",", "2669", ",", "2419", ",", "2299", ",", "1714", 
+       ",", "269", ",", "2092", ",", "141", ",", "1896", ",", "2720", ",", 
+       "1825", ",", "1436", ",", "2166", ",", "2528", ",", "2361", ",", "561",
+        ",", "915", ",", "2724", ",", "2817", ",", "1134", ",", "737", ",", 
+       "1843", ",", "2745", ",", "2489", ",", "2696", ",", "2680", ",", 
+       "1810", ",", "2759", ",", "2371", ",", "1639", ",", "2458", ",", 
+       "1828", ",", "1901", ",", "1548", ",", "2680", ",", "1978", ",", 
+       "1898", ",", "2501", ",", "2488", ",", "2416", ",", "2479", ",", 
+       "1819", ",", "1244", ",", "1213", ",", "568", ",", "338", ",", "2221", 
+       ",", "569", ",", "286", ",", "1445", ",", "1820", ",", "190", ",", 
+       "729", ",", "1541", ",", "2634", ",", "1726", ",", "433", ",", "542", ",",
+        "1445", ",", "2228", ",", "1541", ",", "241", ",", "2474", ",", 
+       "733"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"index", "=", "1"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"index", "=", "1"}], ",", 
+   RowBox[{"index", "<", "88"}], ",", 
+   RowBox[{"index", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GPSDay", "=", 
+     RowBox[{"DEList", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "index"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Event", "=", 
+     RowBox[{"DEList", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "index"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"BiasData", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\</Users/nv/Downloads/results/\>\"", ",", 
+         RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\</dataStream_\>\"",
+          ",", 
+         RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\<_\>\"", ",", 
+         RowBox[{"ToString", "[", "Event", "]"}], ",", "\"\<.txt\>\""}], 
+        "]"}], ",", "\"\<Table\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Template", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\</Users/nv/Downloads/results/\>\"", ",", 
+         RowBox[{"ToString", "[", "GPSDay", "]"}], 
+         ",", "\"\</signalTemplate\>\"", ",", 
+         RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\<-\>\"", ",", 
+         RowBox[{"ToString", "[", "Event", "]"}], ",", "\"\<.out\>\""}], 
+        "]"}], ",", "\"\<Table\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Eij", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\</Users/nv/Downloads/results/oc3Eij/oc3Eij\>\"", ",", 
+         RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\<.out\>\""}], 
+        "]"}], ",", "\"\<Table\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"info", "=", 
+     RowBox[{
+      RowBox[{"Import", "[", 
+       RowBox[{
+        RowBox[{"StringJoin", "[", 
+         RowBox[{"\"\</Users/nv/Downloads/results/\>\"", ",", 
+          RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\</info\>\"", ",", 
+          RowBox[{"ToString", "[", "GPSDay", "]"}], ",", "\"\<.out\>\""}], 
+         "]"}], ",", "\"\<Table\>\""}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"5", ",", "All"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Einv", "=", 
+     RowBox[{"Inverse", "[", "Eij", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Flattemplate", "=", 
+     RowBox[{"Flatten", "[", "Template", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"V", "=", 
+     RowBox[{
+      RowBox[{"Einv", ".", 
+       RowBox[{"Flatten", "[", "BiasData", "]"}]}], "/", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "Flattemplate", "]"}], ".", "Einv", ".", 
+        "Flattemplate"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"SNR", "=", 
+     RowBox[{"Flattemplate", ".", "V"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"h", "=", 
+     RowBox[{
+      RowBox[{"Flattemplate", ".", "Einv", ".", 
+       RowBox[{"Flatten", "[", "BiasData", "]"}]}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "Flattemplate", "]"}], ".", "Einv", ".", 
+        "Flattemplate"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Data", "=", 
+     RowBox[{"Partition", "[", 
+      RowBox[{"V", ",", "61"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"sortedPairs", "=", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"Template", ",", " ", "Data", ",", "info"}], "}"}], "]"}], ",", 
+       RowBox[{"First", "[", 
+        RowBox[{"Position", "[", 
+         RowBox[{"Template", ",", "1"}], "]"}], "]"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"sorted1", "=", 
+     RowBox[{"sortedPairs", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"sorted2", "=", 
+     RowBox[{"sortedPairs", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"sorted3", "=", 
+     RowBox[{"sortedPairs", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "3"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Length", "[", "BiasData", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"DW", "=", 
+     RowBox[{"Reverse", "[", "sorted2", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Length", "[", "Template", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"S", "=", 
+     RowBox[{
+      RowBox[{"Sign", "[", "SNR", "]"}], "*", 
+      RowBox[{"Reverse", "[", "sorted1", "]"}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Finish", "=", 
+     RowBox[{
+      RowBox[{"First", "[", 
+       RowBox[{"Position", "[", 
+        RowBox[{"sorted1", ",", "1"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Start", "=", 
+     RowBox[{
+      RowBox[{"Last", "[", 
+       RowBox[{"Position", "[", 
+        RowBox[{"sorted1", ",", "1"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"spacing", "=", "0.16"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"TileCount", "=", 
+     RowBox[{"Total", "[", 
+      RowBox[{"Total", "[", 
+       RowBox[{"Abs", "[", "Template", "]"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Max2", "=", 
+     RowBox[{"SNR", "/", "TileCount"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Min2", "=", 
+     RowBox[{
+      RowBox[{"-", "1.0"}], "*", "Max2"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"SNRContribution", "=", 
+     RowBox[{"Partition", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Flatten", "[", "S", "]"}], "*", 
+        RowBox[{"Flatten", "[", "DW", "]"}]}], ",", "61"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"newArray", "=", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", "DW", "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"Start", ";;", "Finish"}], "]"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"NumClocks", "=", 
+     RowBox[{"Length", "[", "Template", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"JW", "=", "61"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"NewJW", "=", 
+     RowBox[{"Finish", "-", "Start", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"NewSize", "=", 
+     RowBox[{"NumClocks", "*", "NewJW"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"dist", "=", 
+     RowBox[{"ChiSquareDistribution", "[", 
+      RowBox[{
+       RowBox[{"NumClocks", "*", "NewJW"}], "-", "1"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"xValue", "=", 
+     RowBox[{"Quantile", "[", 
+      RowBox[{"dist", ",", 
+       RowBox[{"1", "-", 
+        RowBox[{"5.802891933", "*", 
+         RowBox[{"10", "^", 
+          RowBox[{"-", "7"}]}]}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"q", "=", 
+     RowBox[{"5.802891933", "*", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "7"}]}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"M", "=", "5000"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"CT", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"NumClocks", "*", "NewJW"}], "-", "1"}], ")"}], "+", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", "2", "]"}], "*", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"2", "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"NumClocks", "*", "NewJW"}], "-", "1"}], ")"}]}], "]"}], "*", 
+       RowBox[{"InverseErf", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", "q"}], ")"}], "^", 
+         RowBox[{"(", 
+          RowBox[{"1", "/", "M"}], ")"}]}], "]"}]}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ETrimmed", "=", 
+     RowBox[{"ConstantArray", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"{", 
+        RowBox[{"NewSize", ",", "NewSize"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"a", "=", "0"}], ",", 
+      RowBox[{"a", "<", "NumClocks"}], ",", 
+      RowBox[{"a", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"s", "=", "1"}], ",", 
+         RowBox[{"s", "<=", "NewJW"}], ",", 
+         RowBox[{"s", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"b", "=", "0"}], ",", 
+            RowBox[{"b", "<", "NumClocks"}], ",", 
+            RowBox[{"b", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"For", "[", 
+              RowBox[{
+               RowBox[{"S", "=", "1"}], ",", 
+               RowBox[{"S", "<=", "NewJW"}], ",", 
+               RowBox[{"S", "++"}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ETrimmed", "[", 
+                  RowBox[{"[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"NewJW", "*", "b"}], "+", "S"}], ",", 
+                    RowBox[{
+                    RowBox[{"NewJW", "*", "a"}], "+", "s"}]}], "]"}], "]"}], "=", 
+                 RowBox[{"Eij", "[", 
+                  RowBox[{"[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"JW", "*", "b"}], "+", "S", "-", "1", "+", 
+                    "Start"}], ",", 
+                    RowBox[{
+                    RowBox[{"JW", "*", "a"}], "+", "s", "-", "1", "+", 
+                    "Start"}]}], "]"}], "]"}]}], ";"}]}], 
+              "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"ETrimmedinv", "=", 
+     RowBox[{"Inverse", "[", "ETrimmed", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"SNRContributionTrimmed", "=", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", "SNRContribution", "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"Start", ";;", "Finish"}], "]"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"DmS", "=", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", 
+        RowBox[{
+         RowBox[{"Transpose", "[", "BiasData", "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"Start", ";;", "Finish"}], "]"}], "]"}], "]"}], "-", 
+       RowBox[{"h", "*", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", "Template", "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"Start", ";;", "Finish"}], "]"}], "]"}], "]"}]}]}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Index: \>\"", ",", "index", ",", "\"\< GPSDay: \>\"", ",", 
+      "GPSDay", ",", " ", "\"\< Event: \>\"", ",", "Event", ",", 
+      " ", "\"\< Distribution Threshold: \>\"", ",", "xValue", ",", 
+      " ", "\"\< Calculated Threshold: \>\"", ",", "CT", ",", 
+      " ", "\"\< Chi^2 Value: \>\"", ",", 
+      RowBox[{
+       RowBox[{"Transpose", "[", "DmS", "]"}], ".", "ETrimmedinv", ".", 
+       "DmS"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], "Input",
+ CellChangeTimes->{{3.9448443125596714`*^9, 3.944844324205021*^9}, {
+   3.944844872086834*^9, 3.944844895823797*^9}, {3.9454349924649944`*^9, 
+   3.945434994096758*^9}, {3.945435033359604*^9, 3.9454350340186825`*^9}, {
+   3.945435641445257*^9, 3.9454357279819355`*^9}, {3.94543589104821*^9, 
+   3.945435939756155*^9}, {3.9454362454809*^9, 3.945436248840904*^9}, {
+   3.945436342543623*^9, 3.9454363434705105`*^9}, {3.945436901584692*^9, 
+   3.9454369024130173`*^9}, {3.9454369329316444`*^9, 
+   3.9454369423697815`*^9}, {3.945437032078844*^9, 3.9454370349749966`*^9}, {
+   3.945437091906576*^9, 3.945437153756569*^9}, {3.9466061582306137`*^9, 
+   3.946606193409998*^9}, {3.947862081446437*^9, 3.947862097159425*^9}, {
+   3.94786581864014*^9, 3.9478658228400583`*^9}, {3.947865886621956*^9, 
+   3.947865891517235*^9}, {3.9478662608292828`*^9, 3.9478662614042253`*^9}, {
+   3.94820094835081*^9, 3.948200982968948*^9}, {3.948202642954514*^9, 
+   3.948202672481921*^9}, {3.948204126963225*^9, 3.948204134594459*^9}, {
+   3.9484670656935*^9, 3.9484670672139587`*^9}, {3.9487583919896812`*^9, 
+   3.9487583969281683`*^9}, {3.948759780271892*^9, 3.948759781013216*^9}, 
+   3.948761131135481*^9, {3.948804218863357*^9, 3.9488042792629147`*^9}, {
+   3.9488043386699553`*^9, 3.948804393378635*^9}, {3.948804436071315*^9, 
+   3.948804578439704*^9}, {3.948804634790312*^9, 3.948804702444639*^9}, {
+   3.9488071135837917`*^9, 3.9488071317177677`*^9}, {3.948807206539497*^9, 
+   3.9488072337353354`*^9}, {3.948807882881612*^9, 3.9488079215705433`*^9}, {
+   3.948898088024605*^9, 3.948898093542348*^9}, {3.949409706859406*^9, 
+   3.949409726555084*^9}, {3.949409813791*^9, 3.9494098160022087`*^9}, {
+   3.949410148666754*^9, 3.949410148753484*^9}, {3.949411988874919*^9, 
+   3.949411989016418*^9}, {3.949414949394496*^9, 3.9494149762829027`*^9}, {
+   3.949415086069646*^9, 3.9494152014653397`*^9}, {3.9494152643764677`*^9, 
+   3.949415264505001*^9}, {3.94967439106527*^9, 3.949674457544277*^9}, {
+   3.9496749327209463`*^9, 3.949674939283568*^9}, {3.949674993886324*^9, 
+   3.949675040908428*^9}, {3.949675078040786*^9, 3.949675087916428*^9}, {
+   3.9496751333130093`*^9, 3.949675139792015*^9}, {3.949676425109975*^9, 
+   3.949676430045539*^9}, {3.951487549086837*^9, 3.951487723281205*^9}, {
+   3.95148777013351*^9, 3.951487776867724*^9}, {3.9514881183880796`*^9, 
+   3.9514881187033567`*^9}, {3.951488159878872*^9, 3.951488169448331*^9}, {
+   3.9514888230648823`*^9, 3.951488826056924*^9}, {3.951489317906086*^9, 
+   3.951489318692518*^9}, {3.9514908374888887`*^9, 3.951490849775875*^9}, {
+   3.951491258993609*^9, 3.9514912725162354`*^9}, {3.951491343526784*^9, 
+   3.951491358377404*^9}, {3.95149139869354*^9, 3.951491403820174*^9}, {
+   3.9514914399661083`*^9, 3.95149145636555*^9}, {3.951491490548324*^9, 
+   3.951491493390376*^9}, {3.951491871411598*^9, 3.951491881510776*^9}, {
+   3.951491913424891*^9, 3.951491957681251*^9}, {3.951492006342215*^9, 
+   3.951492006449028*^9}, 3.951492285123501*^9, {3.951492530502534*^9, 
+   3.951492532963118*^9}, {3.9514927730845957`*^9, 3.951492777333426*^9}, {
+   3.9520925596099157`*^9, 3.9520925635940037`*^9}, {3.952093235238379*^9, 
+   3.9520932354686003`*^9}, {3.9520933550825863`*^9, 
+   3.9520933772285748`*^9}, {3.95209407991824*^9, 3.952094086490933*^9}, {
+   3.952695483297757*^9, 3.9526954842870283`*^9}, {3.952695760240798*^9, 
+   3.9526957904969273`*^9}, {3.952695852742812*^9, 3.9526958777402287`*^9}, {
+   3.9527022467296267`*^9, 3.952702246977084*^9}, {3.9527026923491907`*^9, 
+   3.952702692456544*^9}, 3.9527041410227947`*^9, {3.952704480013603*^9, 
+   3.952704480803317*^9}, {3.95303734196104*^9, 3.9530373431696577`*^9}, {
+   3.9530374097710752`*^9, 3.953037436763755*^9}, {3.9530374825717382`*^9, 
+   3.9530374826576557`*^9}, {3.95303752319811*^9, 3.953037523326324*^9}, {
+   3.9530376204628983`*^9, 3.9530376400174103`*^9}, {3.953638132222023*^9, 
+   3.953638160322845*^9}, {3.953638197311611*^9, 3.953638298221078*^9}, {
+   3.953638329508521*^9, 3.953638332136532*^9}, {3.953638832971938*^9, 
+   3.9536390278407383`*^9}, {3.953641287448902*^9, 3.9536412959704647`*^9}, {
+   3.953911648383655*^9, 3.953911652863945*^9}, {3.953912472269045*^9, 
+   3.953912472327442*^9}, {3.953913247029984*^9, 3.9539132471190157`*^9}, {
+   3.954246656180933*^9, 3.954246673742334*^9}, {3.954247022656002*^9, 
+   3.954247023048402*^9}, {3.954250658018874*^9, 3.954250673906601*^9}, {
+   3.954250739984373*^9, 3.954250762764786*^9}, {3.954250856925294*^9, 
+   3.954250959939547*^9}, {3.954251392331935*^9, 3.954251412498402*^9}, {
+   3.954251443548602*^9, 3.954251613261112*^9}, {3.9542520862310953`*^9, 
+   3.9542521834730597`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"32b7a6fa-bb08-0b45-a31f-732697b59687"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.945435891612705*^9, 3.945435930028303*^9}, {
+   3.9454362460334473`*^9, 3.9454362493040447`*^9}, 3.945436344493971*^9, 
+   3.945436921626791*^9, {3.945437032709049*^9, 3.945437035590267*^9}, {
+   3.9454370956624775`*^9, 3.9454371236064377`*^9}, 3.945437154378237*^9, 
+   3.9457916560683002`*^9, 3.9466055465305786`*^9, 3.946606056084957*^9, {
+   3.946606164226618*^9, 3.9466061955186443`*^9}, 3.946642632885664*^9, 
+   3.947258257762804*^9, 3.94786206052246*^9, {3.9478621044141893`*^9, 
+   3.947862109098137*^9}, 3.947863572898075*^9, 3.947865823435462*^9, 
+   3.947865892191804*^9, 3.94786626189855*^9, 3.947866319727453*^9, {
+   3.947945182231138*^9, 3.947945201297121*^9}, 3.947945314316699*^9, 
+   3.947945598896576*^9, {3.9481994981742163`*^9, 3.948199510139944*^9}, 
+   3.9481998492829657`*^9, {3.948199884349702*^9, 3.948199953185623*^9}, 
+   3.948200248786398*^9, 3.9482002925784063`*^9, 3.9482008951237717`*^9, {
+   3.948200948988701*^9, 3.948200983307311*^9}, {3.948202205743001*^9, 
+   3.948202225589905*^9}, 3.948202443224313*^9, 3.9482024960499477`*^9, 
+   3.948202643751227*^9, 3.948202676602558*^9, 3.948203671901762*^9, {
+   3.948204127603203*^9, 3.948204135074687*^9}, 3.948467218764635*^9, 
+   3.948467260893805*^9, {3.948467966474041*^9, 3.9484679721288633`*^9}, 
+   3.948468015997238*^9, 3.94846809421754*^9, 3.948468746480215*^9, 
+   3.948471426539674*^9, 3.948472037990348*^9, 3.948758403659039*^9, {
+   3.948758707262026*^9, 3.948758723470997*^9}, 3.948758765125239*^9, {
+   3.94875949111303*^9, 3.948759508036723*^9}, 3.948759563318714*^9, 
+   3.948759621767531*^9, 3.9487597841112843`*^9, 3.948761137330555*^9, {
+   3.9488042716362123`*^9, 3.948804280853838*^9}, 3.9488043815807047`*^9, 
+   3.948804443982457*^9, {3.948804495573949*^9, 3.948804497049673*^9}, {
+   3.948804527498569*^9, 3.948804531312572*^9}, 3.948804563130412*^9, {
+   3.9488045976540747`*^9, 3.9488046628485117`*^9}, {3.948804698024123*^9, 
+   3.9488047030354137`*^9}, 3.948807154492188*^9, {3.948807207684803*^9, 
+   3.948807234460269*^9}, 3.948807888603065*^9, 3.948807923904541*^9, 
+   3.948897145233019*^9, 3.948898096200425*^9, {3.9494097113926077`*^9, 
+   3.9494097286472483`*^9}, 3.9494098185609417`*^9, 3.949409880502015*^9, 
+   3.9494101509747543`*^9, {3.949414600753272*^9, 3.949414612220324*^9}, 
+   3.949414698904022*^9, 3.949414757929727*^9, 3.949414867462788*^9, 
+   3.949414956125515*^9, {3.9494151350857573`*^9, 3.949415145771694*^9}, {
+   3.9494151788046007`*^9, 3.949415191805756*^9}, 3.9494152702575817`*^9, 
+   3.9494173637411337`*^9, {3.9496744234958887`*^9, 3.949674461324369*^9}, 
+   3.949674835330854*^9, {3.949674977986133*^9, 3.949675044880192*^9}, {
+   3.949675079493885*^9, 3.949675089191414*^9}, {3.949675130273983*^9, 
+   3.949675140910604*^9}, 3.949676432697949*^9, 3.949676765315197*^9, {
+   3.951487604102607*^9, 3.951487627411886*^9}, {3.9514876625175467`*^9, 
+   3.951487777486978*^9}, 3.951487860739822*^9, {3.951488119539033*^9, 
+   3.951488120919593*^9}, {3.951488160508376*^9, 3.9514881737160378`*^9}, 
+   3.95148932281399*^9, {3.951490844550061*^9, 3.951490872583267*^9}, {
+   3.951491948898006*^9, 3.9514919509292593`*^9}, {3.9514919820995073`*^9, 
+   3.951492009031458*^9}, 3.951492078964879*^9, 3.951492190805544*^9, {
+   3.951492224189857*^9, 3.951492299860915*^9}, {3.9514924821507473`*^9, 
+   3.951492497968339*^9}, {3.951492538259863*^9, 3.9514925612925*^9}, {
+   3.951492698821919*^9, 3.951492726869817*^9}, 3.9514927801769323`*^9, 
+   3.95208998117417*^9, 3.9520925642241373`*^9, {3.952093237744419*^9, 
+   3.95209326202146*^9}, {3.952093362863091*^9, 3.952093380275383*^9}, {
+   3.952094081085519*^9, 3.952094112820449*^9}, {3.9524332426590233`*^9, 
+   3.9524332601361732`*^9}, 3.952434485001514*^9, {3.952695472757325*^9, 
+   3.9526954889205914`*^9}, 3.952695547168037*^9, 3.952696086789618*^9, 
+   3.952696156382308*^9, 3.95269816246807*^9, {3.952698276984694*^9, 
+   3.952698298928966*^9}, 3.9527022516388483`*^9, 3.9527026946819773`*^9, 
+   3.952704143626319*^9, 3.952704483311133*^9, 3.953037295531776*^9, 
+   3.9530373455615463`*^9, {3.953037413911743*^9, 3.95303743920912*^9}, 
+   3.9530374849939127`*^9, 3.9530375255403643`*^9, {3.953037622859454*^9, 
+   3.9530376442426662`*^9}, 3.953638038611598*^9, {3.953638147384725*^9, 
+   3.953638162974741*^9}, {3.953638215463252*^9, 3.953638299930418*^9}, {
+   3.953638330938689*^9, 3.953638335879727*^9}, {3.953638843738866*^9, 
+   3.95363894497637*^9}, 3.953638982730616*^9, 3.953909155402196*^9, {
+   3.953909478685707*^9, 3.953909496635676*^9}, 3.953911653129346*^9, 
+   3.953912474978018*^9, 3.953913249594246*^9, 3.9542464977676363`*^9, 
+   3.954246675402546*^9, 3.954247041174473*^9, 3.954250991680666*^9, 
+   3.954251419732996*^9, 3.9542516182875767`*^9, 3.954252187477847*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"8d1a5cc2-7286-440e-8b3d-5353f3da69e7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12845", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "199", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "155.82349034228832`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "160.00486499412094`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "141.7762895968755`"}],
+  SequenceForm[
+  "Index: ", 1, " GPSDay: ", 12845, " Event: ", 199, 
+   " Distribution Threshold: ", 155.82349034228832`, 
+   " Calculated Threshold: ", 160.00486499412094`, " Chi^2 Value: ", 
+   141.7762895968755],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.95425218833969*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"da2f561b-504e-43e0-8f3b-9f8b8225cce1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12863", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1070", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "183.06763369054246`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "189.68076060155602`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "161.53161919604383`"}],
+  SequenceForm[
+  "Index: ", 2, " GPSDay: ", 12863, " Event: ", 1070, 
+   " Distribution Threshold: ", 183.06763369054246`, 
+   " Calculated Threshold: ", 189.68076060155602`, " Chi^2 Value: ", 
+   161.53161919604383`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252189221407*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"4bcfee9c-e919-4028-a273-1da0c0f81bc4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12915", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "245", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "155.82349034228832`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "160.00486499412094`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "110.27850556106384`"}],
+  SequenceForm[
+  "Index: ", 3, " GPSDay: ", 12915, " Event: ", 245, 
+   " Distribution Threshold: ", 155.82349034228832`, 
+   " Calculated Threshold: ", 160.00486499412094`, " Chi^2 Value: ", 
+   110.27850556106384`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542521901078253`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"d66506ce-7b4a-45d0-90e6-da9fb9271219"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12950", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1073", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "261.25186279176705`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "273.92013276601955`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "261.6472548021881`"}],
+  SequenceForm[
+  "Index: ", 4, " GPSDay: ", 12950, " Event: ", 1073, 
+   " Distribution Threshold: ", 261.25186279176705`, 
+   " Calculated Threshold: ", 273.92013276601955`, " Chi^2 Value: ", 
+   261.6472548021881],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542521910254908`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a32e6d46-2c80-4b2c-a4d9-418a75b31242"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12965", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "329", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "155.82349034228832`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "160.00486499412094`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "128.75239275137457`"}],
+  SequenceForm[
+  "Index: ", 5, " GPSDay: ", 12965, " Event: ", 329, 
+   " Distribution Threshold: ", 155.82349034228832`, 
+   " Calculated Threshold: ", 160.00486499412094`, " Chi^2 Value: ", 
+   128.75239275137457`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252191897592*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"be597cfb-5f0f-4385-8aff-94a79f9beb20"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "12972", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "103", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1474.3482599022643`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1537.1994390546438`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1389.6658669459378`"}],
+  SequenceForm[
+  "Index: ", 6, " GPSDay: ", 12972, " Event: ", 103, 
+   " Distribution Threshold: ", 1474.3482599022643`, 
+   " Calculated Threshold: ", 1537.1994390546438`, " Chi^2 Value: ", 
+   1389.6658669459378`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252194754449*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"eece25e6-b998-4a03-985d-821c26708839"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13150", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1547", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "261.25186279176705`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "273.92013276601955`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "276.6243254743755`"}],
+  SequenceForm[
+  "Index: ", 7, " GPSDay: ", 13150, " Event: ", 1547, 
+   " Distribution Threshold: ", 261.25186279176705`, 
+   " Calculated Threshold: ", 273.92013276601955`, " Chi^2 Value: ", 
+   276.6243254743755],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.95425219566177*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"171d8da2-70e0-40a1-b90b-0effcd88b509"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13154", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1775", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "261.25186279176705`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "273.92013276601955`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "221.7855567745384`"}],
+  SequenceForm[
+  "Index: ", 8, " GPSDay: ", 13154, " Event: ", 1775, 
+   " Distribution Threshold: ", 261.25186279176705`, 
+   " Calculated Threshold: ", 273.92013276601955`, " Chi^2 Value: ", 
+   221.7855567745384],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542521965828543`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"c265d5f8-e79d-466e-8a6c-b7b98c3e7a4f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13216", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2614", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "127.60288148436373`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "129.00411389450485`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "106.42521373037626`"}],
+  SequenceForm[
+  "Index: ", 9, " GPSDay: ", 13216, " Event: ", 2614, 
+   " Distribution Threshold: ", 127.60288148436373`, 
+   " Calculated Threshold: ", 129.00411389450485`, " Chi^2 Value: ", 
+   106.42521373037626`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542521974595613`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"8b846909-1b6a-40e8-bf95-ee4b2381b177"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13604", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2543", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "286.5203499653839`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "300.9337898431789`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "254.09275925574053`"}],
+  SequenceForm[
+  "Index: ", 10, " GPSDay: ", 13604, " Event: ", 2543, 
+   " Distribution Threshold: ", 286.5203499653839, " Calculated Threshold: ", 
+   300.9337898431789, " Chi^2 Value: ", 254.09275925574053`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252198386092*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"0c2bd328-bfed-4e28-9bb3-9a1f81808285"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13734", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2046", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "244.64910808702385`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "256.12197324373983`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "355.12235093834704`"}],
+  SequenceForm[
+  "Index: ", 11, " GPSDay: ", 13734, " Event: ", 2046, 
+   " Distribution Threshold: ", 244.64910808702385`, 
+   " Calculated Threshold: ", 256.12197324373983`, " Chi^2 Value: ", 
+   355.12235093834704`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542521993830357`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a83cdc96-95e1-40e1-b5f5-670ee2600383"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13752", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1637", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "155.82349034228832`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "160.00486499412094`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "91.86551139800545`"}],
+  SequenceForm[
+  "Index: ", 12, " GPSDay: ", 13752, " Event: ", 1637, 
+   " Distribution Threshold: ", 155.82349034228832`, 
+   " Calculated Threshold: ", 160.00486499412094`, " Chi^2 Value: ", 
+   91.86551139800545],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252200279338*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"8ee698b9-a0f7-42b3-941b-6025c2d72aff"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13800", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2135", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "150.26969037784986`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "153.9274712289933`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "181.90438052144327`"}],
+  SequenceForm[
+  "Index: ", 13, " GPSDay: ", 13800, " Event: ", 2135, 
+   " Distribution Threshold: ", 150.26969037784986`, 
+   " Calculated Threshold: ", 153.9274712289933, " Chi^2 Value: ", 
+   181.90438052144327`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252201083692*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"ddf5be81-62b6-4403-b676-8e9eb0106c24"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "13806", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2543", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "155.82349034228832`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "160.00486499412094`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "230.8515546087498`"}],
+  SequenceForm[
+  "Index: ", 14, " GPSDay: ", 13806, " Event: ", 2543, 
+   " Distribution Threshold: ", 155.82349034228832`, 
+   " Calculated Threshold: ", 160.00486499412094`, " Chi^2 Value: ", 
+   230.8515546087498],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252201997736*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"aaee55b6-3962-446e-9383-a2ecaed2ee5a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14134", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "914", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "166.81885830791057`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "172.0074880756992`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "141.91494686313158`"}],
+  SequenceForm[
+  "Index: ", 15, " GPSDay: ", 14134, " Event: ", 914, 
+   " Distribution Threshold: ", 166.81885830791057`, 
+   " Calculated Threshold: ", 172.0074880756992, " Chi^2 Value: ", 
+   141.91494686313158`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522030882587`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"4a4e9edf-89bb-4b7c-b70a-aa3cc4303ffb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14630", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2625", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "291.1733793438188`"}],
+  SequenceForm[
+  "Index: ", 16, " GPSDay: ", 14630, " Event: ", 2625, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   291.1733793438188],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252204384458*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"964f19d6-9f4c-4674-8378-8537d0a9ab70"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14673", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2228", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "146.44030039453344`"}],
+  SequenceForm[
+  "Index: ", 17, " GPSDay: ", 14673, " Event: ", 2228, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   146.44030039453344`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522056670837`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"fb658216-0de5-45f8-8c2f-ab7d257460ae"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14686", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1832", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "389.96803770324453`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "410.8003393293686`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "381.53442841448054`"}],
+  SequenceForm[
+  "Index: ", 18, " GPSDay: ", 14686, " Event: ", 1832, 
+   " Distribution Threshold: ", 389.96803770324453`, 
+   " Calculated Threshold: ", 410.8003393293686, " Chi^2 Value: ", 
+   381.53442841448054`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252207036786*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"6fcd054e-224f-4799-ab5e-2c3685fd8ad9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14695", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "738", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "301.54177546822694`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "316.9546601752277`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "252.83356441960564`"}],
+  SequenceForm[
+  "Index: ", 19, " GPSDay: ", 14695, " Event: ", 738, 
+   " Distribution Threshold: ", 301.54177546822694`, 
+   " Calculated Threshold: ", 316.9546601752277, " Chi^2 Value: ", 
+   252.83356441960564`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252208371314*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"c000ecb3-f3f6-40f8-b5f2-6c0b12736fb0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14791", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1771", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "240.7953789607665`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "251.98471068232828`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "252.0420783143149`"}],
+  SequenceForm[
+  "Index: ", 20, " GPSDay: ", 14791, " Event: ", 1771, 
+   " Distribution Threshold: ", 240.7953789607665, " Calculated Threshold: ", 
+   251.98471068232828`, " Chi^2 Value: ", 252.0420783143149],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252209671165*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"deb4b0aa-569d-443d-941f-d08815d2eafd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "21", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14820", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "835", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "161.33060434614464`"}],
+  SequenceForm[
+  "Index: ", 21, " GPSDay: ", 14820, " Event: ", 835, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   161.33060434614464`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252210956633*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"5ca6de40-31ad-4742-96c6-4cca3c80c55c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "22", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14841", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1828", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "589.1353813454756`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "620.206560950165`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "589.7620163871253`"}],
+  SequenceForm[
+  "Index: ", 22, " GPSDay: ", 14841, " Event: ", 1828, 
+   " Distribution Threshold: ", 589.1353813454756, " Calculated Threshold: ", 
+   620.206560950165, " Chi^2 Value: ", 589.7620163871253],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522124679613`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"8cc5b207-75f9-4e76-a1b8-82b34369fd0e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "23", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14853", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "352", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "589.1353813454756`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "620.206560950165`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "659.6734134846761`"}],
+  SequenceForm[
+  "Index: ", 23, " GPSDay: ", 14853, " Event: ", 352, 
+   " Distribution Threshold: ", 589.1353813454756, " Calculated Threshold: ", 
+   620.206560950165, " Chi^2 Value: ", 659.6734134846761],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252213989242*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"ecfd52e5-705f-4d05-a8ea-d040fed4c940"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "24", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14882", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "711", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "148.49925361156642`"}],
+  SequenceForm[
+  "Index: ", 24, " GPSDay: ", 14882, " Event: ", 711, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   148.49925361156642`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252215267366*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"b5858905-8d37-4acb-a564-fd99694b02b1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "25", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14893", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2669", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "163.89294759921876`"}],
+  SequenceForm[
+  "Index: ", 25, " GPSDay: ", 14893, " Event: ", 2669, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   163.89294759921876`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522164555693`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a9b0af08-fa62-4c6b-b225-1ee55a839eaa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "26", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14936", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2419", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "209.86767200565444`"}],
+  SequenceForm[
+  "Index: ", 26, " GPSDay: ", 14936, " Event: ", 2419, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   209.86767200565444`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252217748969*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"6f9d39a0-de4d-43db-9278-d79f40ba700d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "27", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14960", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2299", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "162.47918573085263`"}],
+  SequenceForm[
+  "Index: ", 27, " GPSDay: ", 14960, " Event: ", 2299, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   162.47918573085263`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252219020114*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"60b74737-c42a-4064-8ead-00ee8926182d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "28", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "14994", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1714", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "122.35026858649965`"}],
+  SequenceForm[
+  "Index: ", 28, " GPSDay: ", 14994, " Event: ", 1714, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   122.35026858649965`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252220294593*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"bcc814d2-91f6-4956-876d-3efb36ea4ac0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "29", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15144", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "269", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "447.6913948235371`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "471.7228968231434`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "350.4385126162955`"}],
+  SequenceForm[
+  "Index: ", 29, " GPSDay: ", 15144, " Event: ", 269, 
+   " Distribution Threshold: ", 447.6913948235371, " Calculated Threshold: ", 
+   471.7228968231434, " Chi^2 Value: ", 350.4385126162955],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522216853857`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"1f51bfb8-ff4d-450d-8214-9254089238f0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "30", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15251", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2092", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "271.39661767922706`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "284.77572666379075`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "331.26940594192695`"}],
+  SequenceForm[
+  "Index: ", 30, " GPSDay: ", 15251, " Event: ", 2092, 
+   " Distribution Threshold: ", 271.39661767922706`, 
+   " Calculated Threshold: ", 284.77572666379075`, " Chi^2 Value: ", 
+   331.26940594192695`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252222987893*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"35e568dc-8b32-4933-acd5-750487fba58b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15433", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "141", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "138.9528699289722`"}],
+  SequenceForm[
+  "Index: ", 31, " GPSDay: ", 15433, " Event: ", 141, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   138.9528699289722],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252224151335*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"496fa1b0-5bcf-48ad-a77e-8d8883d22e38"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "32", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15491", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1896", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "504.69241059868176`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "531.6810899333482`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "496.78237895698436`"}],
+  SequenceForm[
+  "Index: ", 32, " GPSDay: ", 15491, " Event: ", 1896, 
+   " Distribution Threshold: ", 504.69241059868176`, 
+   " Calculated Threshold: ", 531.6810899333482, " Chi^2 Value: ", 
+   496.78237895698436`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252225585026*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"c7436123-1e90-4627-89ed-06c6f832e6f4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "33", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15621", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2720", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "532.9677341386551`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "561.3597865249963`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "615.1311019752596`"}],
+  SequenceForm[
+  "Index: ", 33, " GPSDay: ", 15621, " Event: ", 2720, 
+   " Distribution Threshold: ", 532.9677341386551, " Calculated Threshold: ", 
+   561.3597865249963, " Chi^2 Value: ", 615.1311019752596],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522270402308`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"08999559-7f99-454e-bb0b-50b3c4982aa5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "34", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15704", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1825", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "125.46991224191952`"}],
+  SequenceForm[
+  "Index: ", 34, " GPSDay: ", 15704, " Event: ", 1825, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   125.46991224191952`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252228216724*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"f0c6619d-9329-4529-8b28-8ce25bd15de0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "35", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15774", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1436", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "404.4764478244886`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "426.13460100259334`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "443.5538177044249`"}],
+  SequenceForm[
+  "Index: ", 35, " GPSDay: ", 15774, " Event: ", 1436, 
+   " Distribution Threshold: ", 404.4764478244886, " Calculated Threshold: ", 
+   426.13460100259334`, " Chi^2 Value: ", 443.5538177044249],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252229499722*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"97189dc5-cd18-40c3-8117-64504815427a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "36", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15803", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2166", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "225.2883059156663`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "235.31174357748142`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "210.75526378916032`"}],
+  SequenceForm[
+  "Index: ", 36, " GPSDay: ", 15803, " Event: ", 2166, 
+   " Distribution Threshold: ", 225.2883059156663, " Calculated Threshold: ", 
+   235.31174357748142`, " Chi^2 Value: ", 210.75526378916032`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522305984697`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"10a27749-144a-44d9-88a3-f5f724a2ea7c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "37", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15876", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2528", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1270.395740285997`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1327.0608644155702`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1140.502834613895`"}],
+  SequenceForm[
+  "Index: ", 37, " GPSDay: ", 15876, " Event: ", 2528, 
+   " Distribution Threshold: ", 1270.395740285997, " Calculated Threshold: ", 
+   1327.0608644155702`, " Chi^2 Value: ", 1140.502834613895],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252233227655*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"27d32285-5a46-4a3f-b5dd-3a8eeaba9f87"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "38", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15935", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2361", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "291.53836120013773`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "306.28865131727537`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "339.4570227438672`"}],
+  SequenceForm[
+  "Index: ", 38, " GPSDay: ", 15935, " Event: ", 2361, 
+   " Distribution Threshold: ", 291.53836120013773`, 
+   " Calculated Threshold: ", 306.28865131727537`, " Chi^2 Value: ", 
+   339.4570227438672],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252234443315*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"c6416631-a000-4e50-9f63-8af8597f63d3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "39", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "15956", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "561", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "140.44887427900704`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "143.1539849103641`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "123.11748389476125`"}],
+  SequenceForm[
+  "Index: ", 39, " GPSDay: ", 15956, " Event: ", 561, 
+   " Distribution Threshold: ", 140.44887427900704`, 
+   " Calculated Threshold: ", 143.1539849103641, " Chi^2 Value: ", 
+   123.11748389476125`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252235611215*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9a64a210-8d1e-45ef-82e4-b4f03c40f85a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "40", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16044", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "915", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "140.44887427900704`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "143.1539849103641`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "132.33494655141843`"}],
+  SequenceForm[
+  "Index: ", 40, " GPSDay: ", 16044, " Event: ", 915, 
+   " Distribution Threshold: ", 140.44887427900704`, 
+   " Calculated Threshold: ", 143.1539849103641, " Chi^2 Value: ", 
+   132.33494655141843`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252236781872*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9c7d42df-c8c5-4696-a59b-c6efbeef09cd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "41", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16053", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2724", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "142.0104593234705`"}],
+  SequenceForm[
+  "Index: ", 41, " GPSDay: ", 16053, " Event: ", 2724, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   142.0104593234705],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252237959059*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"ac7ac9df-aeda-4107-979b-51cc684af3a2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "42", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16066", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2817", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "227.72095147666826`"}],
+  SequenceForm[
+  "Index: ", 42, " GPSDay: ", 16066, " Event: ", 2817, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   227.72095147666826`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522391705647`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"7a7fbf33-4f9c-4600-987f-98ec3a745bed"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "43", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16072", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1134", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1674.7277172044112`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1743.2491385459057`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1600.7217511004428`"}],
+  SequenceForm[
+  "Index: ", 43, " GPSDay: ", 16072, " Event: ", 1134, 
+   " Distribution Threshold: ", 1674.7277172044112`, 
+   " Calculated Threshold: ", 1743.2491385459057`, " Chi^2 Value: ", 
+   1600.7217511004428`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252242994953*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"cd4d7ea8-ed00-4813-b41d-77d88c658986"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "44", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16075", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "737", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "158.97755572998685`"}],
+  SequenceForm[
+  "Index: ", 44, " GPSDay: ", 16075, " Event: ", 737, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   158.97755572998685`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522441735153`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"50735aec-7b23-4592-9a6f-9dfa0b652dad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "45", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16081", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1843", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "225.2883059156663`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "235.31174357748142`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "148.19004491367`"}],
+  SequenceForm[
+  "Index: ", 45, " GPSDay: ", 16081, " Event: ", 1843, 
+   " Distribution Threshold: ", 225.2883059156663, " Calculated Threshold: ", 
+   235.31174357748142`, " Chi^2 Value: ", 148.19004491367],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252245273984*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"de97640e-166c-47af-96b7-4aa3debe75a7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "46", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16081", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2745", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "166.81885830791057`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "172.0074880756992`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "122.9006227776092`"}],
+  SequenceForm[
+  "Index: ", 46, " GPSDay: ", 16081, " Event: ", 2745, 
+   " Distribution Threshold: ", 166.81885830791057`, 
+   " Calculated Threshold: ", 172.0074880756992, " Chi^2 Value: ", 
+   122.9006227776092],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522463533363`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"2c398549-5a05-457b-bbba-5f6ad422953e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "47", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16125", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2489", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "134.04910838103532`"}],
+  SequenceForm[
+  "Index: ", 47, " GPSDay: ", 16125, " Event: ", 2489, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   134.04910838103532`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252247534651*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"8d1ff327-b9bb-4489-969a-427248055a28"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "48", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16131", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2696", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "541.1893954374957`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "569.9823261210349`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "536.0344579368824`"}],
+  SequenceForm[
+  "Index: ", 48, " GPSDay: ", 16131, " Event: ", 2696, 
+   " Distribution Threshold: ", 541.1893954374957, " Calculated Threshold: ", 
+   569.9823261210349, " Chi^2 Value: ", 536.0344579368824],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.95425224890942*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"f09a518d-0083-46ce-9252-fd1f26b9abaa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "49", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16133", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2680", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "459.62073604090443`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "484.28642214986303`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "548.8779822768531`"}],
+  SequenceForm[
+  "Index: ", 49, " GPSDay: ", 16133, " Event: ", 2680, 
+   " Distribution Threshold: ", 459.62073604090443`, 
+   " Calculated Threshold: ", 484.28642214986303`, " Chi^2 Value: ", 
+   548.8779822768531],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252250234724*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a963a9ec-432d-4150-9391-f81b94e7cfc5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "50", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16154", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1810", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "262.52283891464526`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "275.2809503972257`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "179.08575134540877`"}],
+  SequenceForm[
+  "Index: ", 50, " GPSDay: ", 16154, " Event: ", 1810, 
+   " Distribution Threshold: ", 262.52283891464526`, 
+   " Calculated Threshold: ", 275.2809503972257, " Chi^2 Value: ", 
+   179.08575134540877`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252251455646*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"0580d0dd-e2e7-4ec4-95f0-317594793326"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "51", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16201", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2759", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "262.52283891464526`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "275.2809503972257`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "185.0534266817532`"}],
+  SequenceForm[
+  "Index: ", 51, " GPSDay: ", 16201, " Event: ", 2759, 
+   " Distribution Threshold: ", 262.52283891464526`, 
+   " Calculated Threshold: ", 275.2809503972257, " Chi^2 Value: ", 
+   185.0534266817532],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252252674822*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9734ba90-092a-4dc2-9eab-6a88820b81a1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "52", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16222", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2371", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "207.86144135174655`"}],
+  SequenceForm[
+  "Index: ", 52, " GPSDay: ", 16222, " Event: ", 2371, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   207.86144135174655`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522538710012`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"83ec3990-d111-417d-9486-53e1e1d643f4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "53", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16301", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1639", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "173.08186825839178`"}],
+  SequenceForm[
+  "Index: ", 53, " GPSDay: ", 16301, " Event: ", 1639, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   173.08186825839178`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252255088285*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"2291a9e2-11ba-45ad-a12b-37fa7c805d1a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "54", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16315", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2458", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "122.08131784593068`"}],
+  SequenceForm[
+  "Index: ", 54, " GPSDay: ", 16315, " Event: ", 2458, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   122.08131784593068`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252256267775*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"cdcc282a-f238-47d2-9598-d20ba63b567b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "55", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16336", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1828", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "96.006126677419`"}],
+  SequenceForm[
+  "Index: ", 55, " GPSDay: ", 16336, " Event: ", 1828, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   96.006126677419],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252257437604*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"cb87b2db-61fb-40a5-924a-5efe8462fd52"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "56", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16342", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1901", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "166.81885830791057`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "172.0074880756992`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "116.48754846718658`"}],
+  SequenceForm[
+  "Index: ", 56, " GPSDay: ", 16342, " Event: ", 1901, 
+   " Distribution Threshold: ", 166.81885830791057`, 
+   " Calculated Threshold: ", 172.0074880756992, " Chi^2 Value: ", 
+   116.48754846718658`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522585059566`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"38cec045-2400-4470-8ce9-fd7336f19782"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "57", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16356", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1548", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "648.3307877370473`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "682.0880151146464`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "629.2563615744834`"}],
+  SequenceForm[
+  "Index: ", 57, " GPSDay: ", 16356, " Event: ", 1548, 
+   " Distribution Threshold: ", 648.3307877370473, " Calculated Threshold: ", 
+   682.0880151146464, " Chi^2 Value: ", 629.2563615744834],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252259982129*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"cd3d44bd-2fc8-49b0-af91-78866056d7f5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "58", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16413", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2680", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1674.7277172044112`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1743.2491385459057`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1507.141234287286`"}],
+  SequenceForm[
+  "Index: ", 58, " GPSDay: ", 16413, " Event: ", 2680, 
+   " Distribution Threshold: ", 1674.7277172044112`, 
+   " Calculated Threshold: ", 1743.2491385459057`, " Chi^2 Value: ", 
+   1507.141234287286],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252263893085*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9efcde54-d0fe-4d9f-a33e-25227491e621"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "59", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16424", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1978", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "236.08314389839418`"}],
+  SequenceForm[
+  "Index: ", 59, " GPSDay: ", 16424, " Event: ", 1978, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   236.08314389839418`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522651263227`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a84bc97a-5422-4e28-9f27-062455e38c29"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "60", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16430", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1898", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "160.06637168799983`"}],
+  SequenceForm[
+  "Index: ", 60, " GPSDay: ", 16430, " Event: ", 1898, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   160.06637168799983`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252266301916*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"68d3e8fc-d5f6-46bb-930d-112eddb827d4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "61", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16444", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2501", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "568.1283742445072`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "598.2134761163011`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "529.0613220749825`"}],
+  SequenceForm[
+  "Index: ", 61, " GPSDay: ", 16444, " Event: ", 2501, 
+   " Distribution Threshold: ", 568.1283742445072, " Calculated Threshold: ", 
+   598.2134761163011, " Chi^2 Value: ", 529.0613220749825],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252267725053*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"650d0bd3-7f01-49f3-ba5f-455f945e8045"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "62", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16446", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2488", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "594.9595031303037`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "626.3008821688138`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "598.8175483949867`"}],
+  SequenceForm[
+  "Index: ", 62, " GPSDay: ", 16446, " Event: ", 2488, 
+   " Distribution Threshold: ", 594.9595031303037, " Calculated Threshold: ", 
+   626.3008821688138, " Chi^2 Value: ", 598.8175483949867],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252269158019*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"19fee2d9-ff98-4f1d-9248-6c04e1046337"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "63", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16461", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2416", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "404.4764478244886`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "426.13460100259334`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "363.16260616893015`"}],
+  SequenceForm[
+  "Index: ", 63, " GPSDay: ", 16461, " Event: ", 2416, 
+   " Distribution Threshold: ", 404.4764478244886, " Calculated Threshold: ", 
+   426.13460100259334`, " Chi^2 Value: ", 363.16260616893015`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252270469998*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"b8e109b4-cba1-4e87-9aba-bb95496c9508"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "64", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16463", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2479", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "320.18894296293854`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "336.80705471333647`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "221.37209916134736`"}],
+  SequenceForm[
+  "Index: ", 64, " GPSDay: ", 16463, " Event: ", 2479, 
+   " Distribution Threshold: ", 320.18894296293854`, 
+   " Calculated Threshold: ", 336.80705471333647`, " Chi^2 Value: ", 
+   221.37209916134736`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522717128553`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"5206889f-5433-4c49-bd9f-16c5197fcb17"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "65", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16470", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1819", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "193.80403406762028`"}],
+  SequenceForm[
+  "Index: ", 65, " GPSDay: ", 16470, " Event: ", 1819, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   193.80403406762028`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252272951623*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"684b5724-c6f0-464b-910e-4fbc9d28f1e2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "66", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16561", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1244", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "114.27461708133664`"}],
+  SequenceForm[
+  "Index: ", 66, " GPSDay: ", 16561, " Event: ", 1244, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   114.27461708133664`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522742682056`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"f638e35c-cc0f-4d45-9881-867eb4c2e22d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "67", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16601", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1213", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "111.20241442084277`"}],
+  SequenceForm[
+  "Index: ", 67, " GPSDay: ", 16601, " Event: ", 1213, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   111.20241442084277`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252275578182*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"15fb5c5f-0c14-4b6f-9c78-b2f69e012343"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "68", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16660", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "568", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1133.8400229285276`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1186.0785620146567`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1124.618978190294`"}],
+  SequenceForm[
+  "Index: ", 68, " GPSDay: ", 16660, " Event: ", 568, 
+   " Distribution Threshold: ", 1133.8400229285276`, 
+   " Calculated Threshold: ", 1186.0785620146567`, " Chi^2 Value: ", 
+   1124.618978190294],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252278028129*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"699226de-a37c-42e3-9e79-e00e16a75307"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "69", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16663", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "338", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "213.18146169023956`"}],
+  SequenceForm[
+  "Index: ", 69, " GPSDay: ", 16663, " Event: ", 338, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   213.18146169023956`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252279309272*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"fa535b5c-3d0b-485a-9476-0204e96e3a21"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "70", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16664", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2221", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "171.3446024500028`"}],
+  SequenceForm[
+  "Index: ", 70, " GPSDay: ", 16664, " Event: ", 2221, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   171.3446024500028],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522805922203`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"e9baff8e-0238-42aa-a609-a454d2a085fc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "71", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16672", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "569", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "137.16130252848927`"}],
+  SequenceForm[
+  "Index: ", 71, " GPSDay: ", 16672, " Event: ", 569, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   137.16130252848927`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522818848553`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"6d042837-f747-4e49-98d8-45676dd66f92"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "72", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16710", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "286", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "174.00786782238944`"}],
+  SequenceForm[
+  "Index: ", 72, " GPSDay: ", 16710, " Event: ", 286, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   174.00786782238944`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522831654778`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9e37524e-b44b-4236-b74f-b1bddbc7652d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "73", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16714", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1445", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "240.7953789607665`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "251.98471068232828`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "263.23808998374955`"}],
+  SequenceForm[
+  "Index: ", 73, " GPSDay: ", 16714, " Event: ", 1445, 
+   " Distribution Threshold: ", 240.7953789607665, " Calculated Threshold: ", 
+   251.98471068232828`, " Chi^2 Value: ", 263.23808998374955`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252284454792*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"ca9bb828-fc4b-43bf-8163-8b45f49646cd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "74", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16720", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1820", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "1425.978703888857`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "1487.4039311459699`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "1371.3557790586954`"}],
+  SequenceForm[
+  "Index: ", 74, " GPSDay: ", 16720, " Event: ", 1820, 
+   " Distribution Threshold: ", 1425.978703888857, " Calculated Threshold: ", 
+   1487.4039311459699`, " Chi^2 Value: ", 1371.3557790586954`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522875844297`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"76c31d53-ece7-4834-b367-7700eca82df2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "75", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "16725", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "190", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "187.4336732713273`"}],
+  SequenceForm[
+  "Index: ", 75, " GPSDay: ", 16725, " Event: ", 190, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   187.4336732713273],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522888952913`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"3045918c-413d-458d-baf6-b89e3e8da6b9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "76", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17023", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "729", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "158.5032423981284`"}],
+  SequenceForm[
+  "Index: ", 76, " GPSDay: ", 17023, " Event: ", 729, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   158.5032423981284],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252290179543*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"906fc43c-d8f9-4556-8ecb-f0ea9954ee6c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "77", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17060", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1541", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "104.72863791808211`"}],
+  SequenceForm[
+  "Index: ", 77, " GPSDay: ", 17060, " Event: ", 1541, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   104.72863791808211`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252291462474*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"30a8d48a-6342-44e4-aec2-3c08534cb484"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "78", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17071", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2634", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "140.44887427900704`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "143.1539849103641`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "138.04412347125577`"}],
+  SequenceForm[
+  "Index: ", 78, " GPSDay: ", 17071, " Event: ", 2634, 
+   " Distribution Threshold: ", 140.44887427900704`, 
+   " Calculated Threshold: ", 143.1539849103641, " Chi^2 Value: ", 
+   138.04412347125577`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522926398478`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a40eaf05-71db-4d11-b668-35056df38408"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "79", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17275", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1726", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "209.61820496743164`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "218.41937705416214`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "190.78025204266422`"}],
+  SequenceForm[
+  "Index: ", 79, " GPSDay: ", 17275, " Event: ", 1726, 
+   " Distribution Threshold: ", 209.61820496743164`, 
+   " Calculated Threshold: ", 218.41937705416214`, " Chi^2 Value: ", 
+   190.78025204266422`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252293912574*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"19ef3982-32e2-4608-bc6b-d1d05458537e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "80", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17311", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "433", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "177.68115383769145`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "183.82993811302876`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "141.26936868704223`"}],
+  SequenceForm[
+  "Index: ", 80, " GPSDay: ", 17311, " Event: ", 433, 
+   " Distribution Threshold: ", 177.68115383769145`, 
+   " Calculated Threshold: ", 183.82993811302876`, " Chi^2 Value: ", 
+   141.26936868704223`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.9542522951952753`*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"e925b490-c33e-440b-81ac-749b0e4310bb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "81", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17445", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "542", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "149.68939300721576`"}],
+  SequenceForm[
+  "Index: ", 81, " GPSDay: ", 17445, " Event: ", 542, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   149.68939300721576`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252296366008*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"f8c9b921-e0b5-4cd8-b278-0a0d6b3b06b9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "82", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17673", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1445", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "106.61792722017636`"}],
+  SequenceForm[
+  "Index: ", 82, " GPSDay: ", 17673, " Event: ", 1445, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   106.61792722017636`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252297558538*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"010ae5f4-1eb8-427f-b1b2-e746796dc152"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "83", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17792", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2228", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "832.6959162462157`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "874.1016484721271`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "807.0540342027709`"}],
+  SequenceForm[
+  "Index: ", 83, " GPSDay: ", 17792, " Event: ", 2228, 
+   " Distribution Threshold: ", 832.6959162462157, " Calculated Threshold: ", 
+   874.1016484721271, " Chi^2 Value: ", 807.0540342027709],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252299267046*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"0de2ad25-1267-46de-9fc1-ee36ca9ec17d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "84", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17810", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "1541", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "172.26553604545228`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "177.93972318251497`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "150.91889137512814`"}],
+  SequenceForm[
+  "Index: ", 84, " GPSDay: ", 17810, " Event: ", 1541, 
+   " Distribution Threshold: ", 172.26553604545228`, 
+   " Calculated Threshold: ", 177.93972318251497`, " Chi^2 Value: ", 
+   150.91889137512814`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252300439745*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"4de3fad1-5c82-4763-b294-032e1cb900f1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "85", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "17812", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "241", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "233.06086957882346`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "243.67381827488185`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "248.67955770031924`"}],
+  SequenceForm[
+  "Index: ", 85, " GPSDay: ", 17812, " Event: ", 241, 
+   " Distribution Threshold: ", 233.06086957882346`, 
+   " Calculated Threshold: ", 243.67381827488185`, " Chi^2 Value: ", 
+   248.67955770031924`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252301621214*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"ad25117c-202e-4a04-9f3b-4b2d35e12bce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "86", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "18022", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "2474", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "166.81885830791057`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "172.0074880756992`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "146.44104342089028`"}],
+  SequenceForm[
+  "Index: ", 86, " GPSDay: ", 18022, " Event: ", 2474, 
+   " Distribution Threshold: ", 166.81885830791057`, 
+   " Calculated Threshold: ", 172.0074880756992, " Chi^2 Value: ", 
+   146.44104342089028`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252302690922*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"e6d90bd6-b5fd-4a30-864f-3a7918829516"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Index: \"\>", "\[InvisibleSpace]", "87", 
+   "\[InvisibleSpace]", "\<\" GPSDay: \"\>", "\[InvisibleSpace]", "18104", 
+   "\[InvisibleSpace]", "\<\" Event: \"\>", "\[InvisibleSpace]", "733", 
+   "\[InvisibleSpace]", "\<\" Distribution Threshold: \"\>", "\[InvisibleSpace]",
+    "166.81885830791057`", 
+   "\[InvisibleSpace]", "\<\" Calculated Threshold: \"\>", "\[InvisibleSpace]",
+    "172.0074880756992`", "\[InvisibleSpace]", "\<\" Chi^2 Value: \"\>", "\[InvisibleSpace]",
+    "95.27726550034728`"}],
+  SequenceForm[
+  "Index: ", 87, " GPSDay: ", 18104, " Event: ", 733, 
+   " Distribution Threshold: ", 166.81885830791057`, 
+   " Calculated Threshold: ", 172.0074880756992, " Chi^2 Value: ", 
+   95.27726550034728],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.954250991682137*^9, 3.954251419733438*^9, 
+  3.954251618289538*^9, 3.954252303762477*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"6ecc2133-1126-459d-a778-67fca6904dd7"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3945b214-8a13-4aa7-9ea7-66f0bd7487f7"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 18909, 384, 1316, "Input",ExpressionUUID->"32b7a6fa-bb08-0b45-a31f-732697b59687"],
+Cell[19488, 408, 4908, 67, 33, "Output",ExpressionUUID->"8d1a5cc2-7286-440e-8b3d-5353f3da69e7"],
+Cell[CellGroupData[{
+Cell[24421, 479, 1012, 20, 23, "Print",ExpressionUUID->"da2f561b-504e-43e0-8f3b-9f8b8225cce1"],
+Cell[25436, 501, 1018, 20, 23, "Print",ExpressionUUID->"4bcfee9c-e919-4028-a273-1da0c0f81bc4"],
+Cell[26457, 523, 1018, 20, 23, "Print",ExpressionUUID->"d66506ce-7b4a-45d0-90e6-da9fb9271219"],
+Cell[27478, 545, 1017, 20, 23, "Print",ExpressionUUID->"a32e6d46-2c80-4b2c-a4d9-418a75b31242"],
+Cell[28498, 567, 1016, 20, 23, "Print",ExpressionUUID->"be597cfb-5f0f-4385-8aff-94a79f9beb20"],
+Cell[29517, 589, 1016, 20, 23, "Print",ExpressionUUID->"eece25e6-b998-4a03-985d-821c26708839"],
+Cell[30536, 611, 1014, 20, 23, "Print",ExpressionUUID->"171d8da2-70e0-40a1-b90b-0effcd88b509"],
+Cell[31553, 633, 1017, 20, 23, "Print",ExpressionUUID->"c265d5f8-e79d-466e-8a6c-b7b98c3e7a4f"],
+Cell[32573, 655, 1020, 20, 23, "Print",ExpressionUUID->"8b846909-1b6a-40e8-bf95-ee4b2381b177"],
+Cell[33596, 677, 1010, 19, 23, "Print",ExpressionUUID->"0c2bd328-bfed-4e28-9bb3-9a1f81808285"],
+Cell[34609, 698, 1022, 20, 23, "Print",ExpressionUUID->"a83cdc96-95e1-40e1-b5f5-670ee2600383"],
+Cell[35634, 720, 1017, 20, 23, "Print",ExpressionUUID->"8ee698b9-a0f7-42b3-941b-6025c2d72aff"],
+Cell[36654, 742, 1017, 20, 23, "Print",ExpressionUUID->"ddf5be81-62b6-4403-b676-8e9eb0106c24"],
+Cell[37674, 764, 1017, 20, 23, "Print",ExpressionUUID->"aaee55b6-3962-446e-9383-a2ecaed2ee5a"],
+Cell[38694, 786, 1017, 20, 23, "Print",ExpressionUUID->"4a4e9edf-89bb-4b7c-b70a-aa3cc4303ffb"],
+Cell[39714, 808, 1017, 20, 23, "Print",ExpressionUUID->"964f19d6-9f4c-4674-8378-8537d0a9ab70"],
+Cell[40734, 830, 1022, 20, 23, "Print",ExpressionUUID->"fb658216-0de5-45f8-8c2f-ab7d257460ae"],
+Cell[41759, 852, 1017, 20, 23, "Print",ExpressionUUID->"6fcd054e-224f-4799-ab5e-2c3685fd8ad9"],
+Cell[42779, 874, 1015, 20, 23, "Print",ExpressionUUID->"c000ecb3-f3f6-40f8-b5f2-6c0b12736fb0"],
+Cell[43797, 896, 1010, 19, 23, "Print",ExpressionUUID->"deb4b0aa-569d-443d-941f-d08815d2eafd"],
+Cell[44810, 917, 1018, 20, 23, "Print",ExpressionUUID->"5ca6de40-31ad-4742-96c6-4cca3c80c55c"],
+Cell[45831, 939, 1007, 19, 23, "Print",ExpressionUUID->"8cc5b207-75f9-4e76-a1b8-82b34369fd0e"],
+Cell[46841, 960, 1003, 19, 23, "Print",ExpressionUUID->"ecfd52e5-705f-4d05-a8ea-d040fed4c940"],
+Cell[47847, 981, 1018, 20, 23, "Print",ExpressionUUID->"b5858905-8d37-4acb-a564-fd99694b02b1"],
+Cell[48868, 1003, 1022, 20, 23, "Print",ExpressionUUID->"a9b0af08-fa62-4c6b-b225-1ee55a839eaa"],
+Cell[49893, 1025, 1020, 20, 23, "Print",ExpressionUUID->"6f9d39a0-de4d-43db-9278-d79f40ba700d"],
+Cell[50916, 1047, 1020, 20, 23, "Print",ExpressionUUID->"60b74737-c42a-4064-8ead-00ee8926182d"],
+Cell[51939, 1069, 1020, 20, 23, "Print",ExpressionUUID->"bcc814d2-91f6-4956-876d-3efb36ea4ac0"],
+Cell[52962, 1091, 1007, 19, 23, "Print",ExpressionUUID->"1f51bfb8-ff4d-450d-8214-9254089238f0"],
+Cell[53972, 1112, 1020, 20, 23, "Print",ExpressionUUID->"35e568dc-8b32-4933-acd5-750487fba58b"],
+Cell[54995, 1134, 1015, 20, 23, "Print",ExpressionUUID->"496fa1b0-5bcf-48ad-a77e-8d8883d22e38"],
+Cell[56013, 1156, 1017, 20, 23, "Print",ExpressionUUID->"c7436123-1e90-4627-89ed-06c6f832e6f4"],
+Cell[57033, 1178, 1009, 19, 23, "Print",ExpressionUUID->"08999559-7f99-454e-bb0b-50b3c4982aa5"],
+Cell[58045, 1199, 1020, 20, 23, "Print",ExpressionUUID->"f0c6619d-9329-4529-8b28-8ce25bd15de0"],
+Cell[59068, 1221, 1010, 19, 23, "Print",ExpressionUUID->"97189dc5-cd18-40c3-8117-64504815427a"],
+Cell[60081, 1242, 1015, 19, 23, "Print",ExpressionUUID->"10a27749-144a-44d9-88a3-f5f724a2ea7c"],
+Cell[61099, 1263, 1010, 19, 23, "Print",ExpressionUUID->"27d32285-5a46-4a3f-b5dd-3a8eeaba9f87"],
+Cell[62112, 1284, 1017, 20, 23, "Print",ExpressionUUID->"c6416631-a000-4e50-9f63-8af8597f63d3"],
+Cell[63132, 1306, 1015, 20, 23, "Print",ExpressionUUID->"9a64a210-8d1e-45ef-82e4-b4f03c40f85a"],
+Cell[64150, 1328, 1015, 20, 23, "Print",ExpressionUUID->"9c7d42df-c8c5-4696-a59b-c6efbeef09cd"],
+Cell[65168, 1350, 1017, 20, 23, "Print",ExpressionUUID->"ac7ac9df-aeda-4107-979b-51cc684af3a2"],
+Cell[66188, 1372, 1022, 20, 23, "Print",ExpressionUUID->"7a7fbf33-4f9c-4600-987f-98ec3a745bed"],
+Cell[67213, 1394, 1020, 20, 23, "Print",ExpressionUUID->"cd4d7ea8-ed00-4813-b41d-77d88c658986"],
+Cell[68236, 1416, 1020, 20, 23, "Print",ExpressionUUID->"50735aec-7b23-4592-9a6f-9dfa0b652dad"],
+Cell[69259, 1438, 1006, 19, 23, "Print",ExpressionUUID->"de97640e-166c-47af-96b7-4aa3debe75a7"],
+Cell[70268, 1459, 1016, 20, 23, "Print",ExpressionUUID->"2c398549-5a05-457b-bbba-5f6ad422953e"],
+Cell[71287, 1481, 1020, 20, 23, "Print",ExpressionUUID->"8d1ff327-b9bb-4489-969a-427248055a28"],
+Cell[72310, 1503, 1006, 19, 23, "Print",ExpressionUUID->"f09a518d-0083-46ce-9252-fd1f26b9abaa"],
+Cell[73319, 1524, 1017, 20, 23, "Print",ExpressionUUID->"a963a9ec-432d-4150-9391-f81b94e7cfc5"],
+Cell[74339, 1546, 1017, 20, 23, "Print",ExpressionUUID->"0580d0dd-e2e7-4ec4-95f0-317594793326"],
+Cell[75359, 1568, 1014, 20, 23, "Print",ExpressionUUID->"9734ba90-092a-4dc2-9eab-6a88820b81a1"],
+Cell[76376, 1590, 1022, 20, 23, "Print",ExpressionUUID->"83ec3990-d111-417d-9486-53e1e1d643f4"],
+Cell[77401, 1612, 1020, 20, 23, "Print",ExpressionUUID->"2291a9e2-11ba-45ad-a12b-37fa7c805d1a"],
+Cell[78424, 1634, 1020, 20, 23, "Print",ExpressionUUID->"cdcc282a-f238-47d2-9598-d20ba63b567b"],
+Cell[79447, 1656, 1013, 20, 23, "Print",ExpressionUUID->"cb87b2db-61fb-40a5-924a-5efe8462fd52"],
+Cell[80463, 1678, 1019, 20, 23, "Print",ExpressionUUID->"38cec045-2400-4470-8ce9-fd7336f19782"],
+Cell[81485, 1700, 1007, 19, 23, "Print",ExpressionUUID->"cd3d44bd-2fc8-49b0-af91-78866056d7f5"],
+Cell[82495, 1721, 1017, 20, 23, "Print",ExpressionUUID->"9efcde54-d0fe-4d9f-a33e-25227491e621"],
+Cell[83515, 1743, 1022, 20, 23, "Print",ExpressionUUID->"a84bc97a-5422-4e28-9f27-062455e38c29"],
+Cell[84540, 1765, 1020, 20, 23, "Print",ExpressionUUID->"68d3e8fc-d5f6-46bb-930d-112eddb827d4"],
+Cell[85563, 1787, 1007, 19, 23, "Print",ExpressionUUID->"650d0bd3-7f01-49f3-ba5f-455f945e8045"],
+Cell[86573, 1808, 1007, 19, 23, "Print",ExpressionUUID->"19fee2d9-ff98-4f1d-9248-6c04e1046337"],
+Cell[87583, 1829, 1013, 19, 23, "Print",ExpressionUUID->"b8e109b4-cba1-4e87-9aba-bb95496c9508"],
+Cell[88599, 1850, 1022, 20, 23, "Print",ExpressionUUID->"5206889f-5433-4c49-bd9f-16c5197fcb17"],
+Cell[89624, 1872, 1020, 20, 23, "Print",ExpressionUUID->"684b5724-c6f0-464b-910e-4fbc9d28f1e2"],
+Cell[90647, 1894, 1022, 20, 23, "Print",ExpressionUUID->"f638e35c-cc0f-4d45-9881-867eb4c2e22d"],
+Cell[91672, 1916, 1020, 20, 23, "Print",ExpressionUUID->"15fb5c5f-0c14-4b6f-9c78-b2f69e012343"],
+Cell[92695, 1938, 1015, 20, 23, "Print",ExpressionUUID->"699226de-a37c-42e3-9e79-e00e16a75307"],
+Cell[93713, 1960, 1018, 20, 23, "Print",ExpressionUUID->"fa535b5c-3d0b-485a-9476-0204e96e3a21"],
+Cell[94734, 1982, 1019, 20, 23, "Print",ExpressionUUID->"e9baff8e-0238-42aa-a609-a454d2a085fc"],
+Cell[95756, 2004, 1020, 20, 23, "Print",ExpressionUUID->"6d042837-f747-4e49-98d8-45676dd66f92"],
+Cell[96779, 2026, 1020, 20, 23, "Print",ExpressionUUID->"9e37524e-b44b-4236-b74f-b1bddbc7652d"],
+Cell[97802, 2048, 1013, 19, 23, "Print",ExpressionUUID->"ca9bb828-fc4b-43bf-8163-8b45f49646cd"],
+Cell[98818, 2069, 1015, 19, 23, "Print",ExpressionUUID->"76c31d53-ece7-4834-b367-7700eca82df2"],
+Cell[99836, 2090, 1017, 20, 23, "Print",ExpressionUUID->"3045918c-413d-458d-baf6-b89e3e8da6b9"],
+Cell[100856, 2112, 1015, 20, 23, "Print",ExpressionUUID->"906fc43c-d8f9-4556-8ecb-f0ea9954ee6c"],
+Cell[101874, 2134, 1020, 20, 23, "Print",ExpressionUUID->"30a8d48a-6342-44e4-aec2-3c08534cb484"],
+Cell[102897, 2156, 1019, 20, 23, "Print",ExpressionUUID->"a40eaf05-71db-4d11-b668-35056df38408"],
+Cell[103919, 2178, 1020, 20, 23, "Print",ExpressionUUID->"19ef3982-32e2-4608-bc6b-d1d05458537e"],
+Cell[104942, 2200, 1020, 20, 23, "Print",ExpressionUUID->"e925b490-c33e-440b-81ac-749b0e4310bb"],
+Cell[105965, 2222, 1018, 20, 23, "Print",ExpressionUUID->"f8c9b921-e0b5-4cd8-b278-0a0d6b3b06b9"],
+Cell[106986, 2244, 1020, 20, 23, "Print",ExpressionUUID->"010ae5f4-1eb8-427f-b1b2-e746796dc152"],
+Cell[108009, 2266, 1007, 19, 23, "Print",ExpressionUUID->"0de2ad25-1267-46de-9fc1-ee36ca9ec17d"],
+Cell[109019, 2287, 1020, 20, 23, "Print",ExpressionUUID->"4de3fad1-5c82-4763-b294-032e1cb900f1"],
+Cell[110042, 2309, 1018, 20, 23, "Print",ExpressionUUID->"ad25117c-202e-4a04-9f3b-4b2d35e12bce"],
+Cell[111063, 2331, 1017, 20, 23, "Print",ExpressionUUID->"e6d90bd6-b5fd-4a30-864f-3a7918829516"],
+Cell[112083, 2353, 1012, 20, 23, "Print",ExpressionUUID->"6ecc2133-1126-459d-a778-67fca6904dd7"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
