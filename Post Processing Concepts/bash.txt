@@ -1,0 +1,16 @@
+Deletes _delete.out files:
+find . -type f -name '*_delete.out' -exec rm {} +
+
+Deletes empty files:
+find . -type f -empty -delete
+
+Removing labels:
+find -type f -name "*.out" -exec sed -i '/velocity: /d; /vectors: /d' {} \;
+
+SNR filter:
+for file in *.out; do
+    awk '$3 < -6.15 || $3 > 6.15' "$file" > temp && mv temp "$file"
+done
+
+PE list:
+for file in snrPE*.out; do   number="${file#snrPE}";   number="${number%.out}";   sed "s/^/$number /" "$file" >> PElist.out; done
