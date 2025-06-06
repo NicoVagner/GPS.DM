@@ -1,0 +1,5 @@
+1656 1 1656 1        \| Week\/day range \(W1 D1 W2 D2\)            \(6\)
+1449 4 1449 4        \| Week\/day range \(W1 D1 W2 D2\)            \(6\)
+1666 0 1666 0        \| Week\/day range \(W1 D1 W2 D2\)            \(6\)
+1825 0 1825 0        \| Week\/day range \(W1 D1 W2 D2\)            \(6\)
+1503 4 1503 4        \| Week\/day range \(W1 D1 W2 D2\)            \(6\)

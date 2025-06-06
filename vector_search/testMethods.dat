@@ -1,0 +1,158 @@
+../PSD/                  | Location of PSD input files                        (1)
+./priorCDF/              | Location of prior CDF files                        (2)
+00 00 00 00              | # Rb clocks (IIF,IIA,IIR,II)                       (3)
+00 00    00              | # Cs clocks (IIF,IIA,II)                           ('')
+USN3 1 1280-1959         | Ref?, random svn?, acf_label                       (4)
+30 0.05                  | White noise clocks; s.d.                           (5)
+00 0.0073                | Station clocks (white only)                        (6)
+1 0.005                  | Simulate cross-clock-corr.                         (7)
+1 1 1 1 0 0              | diff, Eij?, From file?  ccc? sub mean? exact?      (8)
+1                        | # iterations (<= 2048)                             (9)
+100 2600                  | jmin, jmax (epochs to include)                     (10)
+0.000  0                | h (event size, ns), log(d/km)                      (11)
+825.7 300 0.236 1.741    | Event: t0, v, theta,phi (/pi)                      (12a)
+0.20 50 0.210            | Range: t0, v, theta,phi (/pi)                      (12b)
+twall  0.7  1.           | model. R(/Rgps), alpha/pi                          (13)
+0 0 0.00                 | "Bad sig": ref (y/n); rand (#); mag.               (14)
+all   1                  | Assume coupling? v priors (0=flat)?                (15)
+1024  0.0100             | N_MC, h_min                                        (16)
+1 100 7.0 1 1            | method, O_cut, SNR_cut, param est, bias print      (17)
+5  1                     | Limit # cores (0=no), //ise iterations?            (18)
+testx                    | label for output files                             (19)
+=========================/
+
+OASIS PSD FILES:
+/home/public/DM/data/PSD/    | location of input files                  (1)
+
+1.
+Location of PSD and ACF files.
+PSD files are used to simulate realistic clock data.
+ACF files are used to generate the covariance/Hessian matrices (multivariate)
+Neither files are needed if you use only white noise.
+
+2.
+Location for numerical prior CDF files.
+These must be plain text files, named:
+  "psi.cdf"       - For angles: note: psi angle (in DM halo frame!)
+  "psiperp.cdf"   - For angles (perpendicular)
+  "v.cdf"         - For (scalar) velocity
+  "vperp.cdf"     - For perpendicular (scalar) velocity
+
+3. Simulate real clocks:
+(two lines)
+Number of each type of clock you want to simulate. Total number of clocks
+will be the sum of all these two numbers.
+Note: there are no CsIIR clocks.
+
+4. Three inputs:
+ a) Which reference clock to simulate? Common choices are AMC2 & USN3. can be
+    'Hmas', which is the average of all available H-maser references.
+    Can also a a satellite clock, e.g., "RbIIR".
+ b) Use random SVN? 1=> Randomly assign each clock an SVN to simulate.
+    0=> use the PSD that was averaged over all SVNs
+ c) The label that was applied to the PSD/ACF files. Usually refers to the
+    weeks that were used to create them. E.g., the PSD file:
+      CsII-15-AMC2-128-19.psd  The label is "128-19".
+
+5. Use white noise clocks. Two inputs
+ a) Number of clocks to generate white noise data for. In this number is not
+    zero, all the above options will be ignored. Cannot mix simulated clocks
+    with white-noise clocks.
+ b) Standard deviation (in ns) for the white noise clocks.
+
+
+6. Simulate base stations (receiver) clocks. (White noise only for now)
+  a) Number of Earth-bound clocks to simulate [1-4 typical; >10 after 1934]
+  b) Standard deviation of these clocks. [0.007 typical]
+
+7.
+Simulate cross clock correlations, by generating a white-noise clock, and then
+using that as the reference! (Note: re-normalises clock solutions to avoid
+increasing the standard deviation)
+1 = yes
+second option is standard deviation (of reference). 0.0075 is typical
+
+8. Covariance etc. 5 inputs:
+  a) Difference. 1=single, 2=double, 3=mixed*.
+  b) Use the covariance? 1=yes, 0=no.
+  c) Read in ACF from file (=1), or calculate it "on the fly" (=0)
+  d) Include the cross-clock-correlation into covariance?
+  e) Subtract the weighted** mean of other clocks from each clock?
+  f) Use cholesky inversion (1) or approximate inversion (0)
+*"mixed" difference: 2-order for CsII and CsIIA, 1-order for all others.
+**At the moment, uses s.d. as weights. Should it use variance?
+***MUST simulate ccc in 7 to include ccc for (d)
+
+9.
+Number of times to run the simulations. Generates new clock data/positions each
+time.
+
+10. which Epochs to run for:
+jbeg, jend are first/last epochs odds will be counted for.
+When injecting an event, there's no point putting a large range.
+  --also, must have at least +/-1 !
+When doing false-positive tests, should be a large window.
+
+11. Event magnitude (coupling), and object width.
+(a) h: Will inject an ideal event of this magnitude into the data.
+    If this number is zero, will not inject any events, and instead will check
+    for false positives.
+(b) d: wall/monopole/string width. given as a log in km (2 => 100 km).
+    Ignored if thin wall model is used.
+
+12a. input DM event parameters.
+if h=0 (see 12), then this is ignored.
+'midpoint' values for the input parameters for the ideal events.
+t0 (in 'epochs' - make sure it's within the jmin/jmax bounds)
+v (km/s)
+theta and phi are in units of PI (theta 0->1, phi 0->2)
+
+12b.
+"Range" for the input event parameters. Same units as above.
+It is important to have a small range, so that we don't get spuriously good
+results in the case one of the input parameters just happens to line up very
+well with the integration grid.
+Each iteration will have a slightly different event.
+On the other hand, when doing "parameter estimation" test, should be no range!
+
+13.
+Three inputs:
+  a) model: twall, dwall, monopole, string
+  b) Rdm: overall impact parameter, in units of Rgps. Typical ~0.7. No range.
+  c) alpha: impact parameter angle, in units of pi. [0,2]. No range.
+b and c only needed for monopoles/strings
+
+14.
+"Bad" signals. Will inject random/bad signals. 3 inputs:
+ a) Ref jump? Just yes (=1) or no (=0) ("vertical line)
+ b) Random jumps? Will insert this number of random jumps per clock.
+ c) Magnitude of the 'bad' jumps, in ns
+
+15.
+  a)Assume one particular coupling (i.e. to alpha, m_e, or m_q) dominates.
+    Used to work out the relative sensitivity coefficients for each clock.
+    can be: alpha, me, mq, or 'all'
+    'all' (or anything else) will assume all clocks respond the same way.
+  b) Use flat priors for v and angles?
+    1=> use proper (SHM) priors. =0 => use "flat" priors
+
+16. Monte Carlo integration: Two inputs
+a) N_MC. Number of grid points to use for MC grid.
+b) h0/h_min. Should be smaller (~2-3x) than the smallest event we look for.
+
+17.
+  a)  search method: 0 - likelihoods method, 1 - snr method
+  b)  O_cut. Odds ratios above this value (with j=+/-1) are considered "found"
+  c)  SNR_cut. SNR values above this within 1 epoch of injected signal are "found"
+  d)  Estimate parameters? =1 means do parameter estimation => output file.
+  e)  print clock bias data? =0 no, otherwise yes.
+
+18.
+(a) Limit the number of cores the code is parallelised over.
+    Does nothing if openMP is not enabled.
+    If you place 0, there will be no limit (default).
+    If you place 1, there will be no parallelisation.
+    Placing a larger number than the number of cores can actually be better too
+    (depending on the type of CPU?)
+(b) Parallelise over iterations (=1), or inside the MC loop (=0).
+    Set to 1 for fastest results.
