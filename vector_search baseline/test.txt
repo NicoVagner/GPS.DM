@@ -1,0 +1,2521 @@
+
+
+ ###########################################
+             Running search program            
+ ###########################################
+
+Search Parameters: 
+
+Searching days 		-	2012-02-01 through 2012-02-01
+Search style 		-	Searching full day
+Window size 		-	61
+MCMC iterations 	-	1024
+Inverse method 		-	Exact
+Model type 		-	Thin wall
+Coupling 		-	all
+h-integral minimum 	-	0.01
+Odds-ratio cut-off 	-	10
+SNR cut-off 		-	7
+
+Here in search 1
+Here 1 JPL
+Here 1 JPLreadata
+Here 4 JPLreadata
+Here 5 JPLreadata
+Here 8 JPLreadata
+Here 9 JPLreadata
+this is prn in array order: G01
+this is prn in array order: G02
+this is prn in array order: G03
+this is prn in array order: G04
+this is prn in array order: G05
+this is prn in array order: G06
+this is prn in array order: G07
+this is prn in array order: G08
+this is prn in array order: G09
+this is prn in array order: G10
+this is prn in array order: G11
+this is prn in array order: G12
+this is prn in array order: G13
+this is prn in array order: G14
+this is prn in array order: G15
+this is prn in array order: G16
+this is prn in array order: G17
+this is prn in array order: G18
+this is prn in array order: G19
+this is prn in array order: G20
+this is prn in array order: G21
+this is prn in array order: G22
+this is prn in array order: G23
+this is prn in array order: G25
+this is prn in array order: G26
+this is prn in array order: G27
+this is prn in array order: G28
+this is prn in array order: G29
+this is prn in array order: G30
+this is prn in array order: G31
+this is prn in array order: G32
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is svn in array order: 00
+this is clk type in array order: **
+this is number of Cs clocks: 0
+this is number of all clocks: 31
+this is number of satellites: 0
+this is number of satellites: 0
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvn[i]: 99
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is tmpsvnord[i]: 
+this is number of all clocks after elim: 31
+198440
+377094
+3625.22
+80321.6
+-277380
+28015.3
+53859.8
+528.711
+135553
+-27568.5
+-228174
+49848.7
+227554
+192200
+-93693.7
+-221396
+151460
+179449
+-231310
+61074.2
+-201386
+142927
+236962
+31391.4
+-320534
+352094
+108247
+280452
+-29138.3
+202592
+-400965
+Hello at end of readbiasdata:  
+Saving pseudo-frequencies to a file
+Here 2 JPL
+Here 1 ECIpos
+num_clocks: 31
+Here 2 ECIpos
+Here 3 ECIpos
+Here 4 ECIpos
+/ssd2/newJPL/
+Here 1 ECIsatpos
+Here 2 ECIsatpos
+number of clock: 31
+this is XX: 0
+this is YY: 1
+this is ZZ: 2
+eciSat: 1
+eciSat: 2
+eciSat: 3
+eciSat: 4
+eciSat: 5
+eciSat: 6
+eciSat: 7
+eciSat: 8
+eciSat: 9
+eciSat: 10
+eciSat: 11
+eciSat: 12
+eciSat: 13
+eciSat: 14
+eciSat: 15
+eciSat: 16
+eciSat: 17
+eciSat: 18
+eciSat: 19
+eciSat: 20
+eciSat: 21
+eciSat: 22
+eciSat: 23
+eciSat: 24
+eciSat: 25
+eciSat: 26
+eciSat: 27
+eciSat: 28
+eciSat: 29
+eciSat: 30
+eciSat: 31
+total eciSat: 31
+testSVN: 23
+testSVN: 26
+testSVN: 27
+testSVN: 33
+testSVN: 34
+testSVN: 35
+testSVN: 36
+testSVN: 38
+testSVN: 39
+testSVN: 40
+testSVN: 41
+testSVN: 43
+testSVN: 44
+testSVN: 45
+testSVN: 46
+testSVN: 47
+testSVN: 48
+testSVN: 50
+testSVN: 51
+testSVN: 52
+testSVN: 53
+testSVN: 54
+testSVN: 55
+testSVN: 56
+testSVN: 57
+testSVN: 58
+testSVN: 59
+testSVN: 60
+testSVN: 61
+testSVN: 62
+testSVN: 63
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+tmpsvn[i]: 99
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+new tmpsvnord[i]: 
+i:0 new2 tmpsvnord[i]: 0
+i:1 new2 tmpsvnord[i]: 0
+i:2 new2 tmpsvnord[i]: 0
+i:3 new2 tmpsvnord[i]: 0
+i:4 new2 tmpsvnord[i]: 0
+i:5 new2 tmpsvnord[i]: 0
+i:6 new2 tmpsvnord[i]: 0
+i:7 new2 tmpsvnord[i]: 0
+i:8 new2 tmpsvnord[i]: 0
+i:9 new2 tmpsvnord[i]: 0
+i:10 new2 tmpsvnord[i]: 0
+i:11 new2 tmpsvnord[i]: 0
+i:12 new2 tmpsvnord[i]: 0
+i:13 new2 tmpsvnord[i]: 0
+i:14 new2 tmpsvnord[i]: 0
+i:15 new2 tmpsvnord[i]: 0
+i:16 new2 tmpsvnord[i]: 0
+i:17 new2 tmpsvnord[i]: 0
+i:18 new2 tmpsvnord[i]: 0
+i:19 new2 tmpsvnord[i]: 0
+i:20 new2 tmpsvnord[i]: 0
+i:21 new2 tmpsvnord[i]: 0
+i:22 new2 tmpsvnord[i]: 0
+i:23 new2 tmpsvnord[i]: 0
+i:24 new2 tmpsvnord[i]: 0
+i:25 new2 tmpsvnord[i]: 0
+i:26 new2 tmpsvnord[i]: 0
+i:27 new2 tmpsvnord[i]: 0
+i:28 new2 tmpsvnord[i]: 0
+i:29 new2 tmpsvnord[i]: 0
+i:30 new2 tmpsvnord[i]: 0
+after new2
+Here 3 ECIsatpos
+Here 1 in loop0
+testSNV2: 23
+Here 1 in loop1
+testSNV2: 26
+Here 1 in loop2
+testSNV2: 27
+Here 1 in loop3
+testSNV2: 33
+Here 1 in loop4
+testSNV2: 34
+Here 1 in loop5
+testSNV2: 35
+Here 1 in loop6
+testSNV2: 36
+Here 1 in loop7
+testSNV2: 38
+Here 1 in loop8
+testSNV2: 39
+Here 1 in loop9
+testSNV2: 40
+Here 1 in loop10
+testSNV2: 41
+Here 1 in loop11
+testSNV2: 43
+Here 1 in loop12
+testSNV2: 44
+Here 1 in loop13
+testSNV2: 45
+Here 1 in loop14
+testSNV2: 46
+Here 1 in loop15
+testSNV2: 47
+Here 1 in loop16
+testSNV2: 48
+Here 1 in loop17
+testSNV2: 50
+Here 1 in loop18
+testSNV2: 51
+Here 1 in loop19
+testSNV2: 52
+Here 1 in loop20
+testSNV2: 53
+Here 1 in loop21
+testSNV2: 54
+Here 1 in loop22
+testSNV2: 55
+Here 1 in loop23
+testSNV2: 56
+Here 1 in loop24
+testSNV2: 57
+Here 1 in loop25
+testSNV2: 58
+Here 1 in loop26
+testSNV2: 59
+Here 1 in loop27
+testSNV2: 60
+Here 1 in loop28
+testSNV2: 61
+Here 1 in loop29
+testSNV2: 62
+Here 1 in loop30
+testSNV2: 63
+Here 3.5 ECIsatpos
+Here 4 ECIsatpos
+eciSat: 31
+ num_recievers: 0
+Here 5 ECIsatpos
+Here 5 ECIpos
+Here 3 JPL
+Here in difference data
+this is num_clocks in diff data: 31
+Here in calc std
+i: 0sdev[i]: 0.0108106
+i: 1sdev[i]: 0.0640325
+i: 2sdev[i]: 0.0926524
+i: 3sdev[i]: 0.0462275
+i: 4sdev[i]: 0.0720821
+i: 5sdev[i]: 0.0457941
+i: 6sdev[i]: 0.0719846
+i: 7sdev[i]: 0.097422
+i: 8sdev[i]: 0.0816458
+i: 9sdev[i]: 0.0863478
+i: 10sdev[i]: 0.0756435
+i: 11sdev[i]: 0.0870009
+i: 12sdev[i]: 0.105376
+i: 13sdev[i]: 0.0714644
+i: 14sdev[i]: 0.0781027
+i: 15sdev[i]: 0.0811652
+i: 16sdev[i]: 0.0867734
+i: 17sdev[i]: 0.0765687
+i: 18sdev[i]: 0.0803566
+i: 19sdev[i]: 0.0703266
+i: 20sdev[i]: 0.0975677
+i: 21sdev[i]: 0.0772768
+i: 22sdev[i]: 0.066029
+i: 23sdev[i]: 0.0102617
+i: 24sdev[i]: 0.0481872
+i: 25sdev[i]: 0.0788486
+i: 26sdev[i]: 0.0765396
+i: 27sdev[i]: 0.0784611
+i: 28sdev[i]: 0.0216529
+i: 29sdev[i]: 0.0703357
+i: 30sdev[i]: 0.0230185
+this is avg sdev: 0.0687082
+Here in search 2
+this is num clocks to acf: 31
+number of clocks in read ACF: 31
+number of satellites removed in read ACF: 0
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is nt: 0 in read ACF this is acf[nt] : 1
+this is all acf[i][j]: 1
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+this is all acf[i][j]: 0
+
+this is b0: 8.46685e-05
+this is b0: 2.06383e-05
+this is b0: -6.2729e-06
+this is b0: -9.71124e-06
+this is b0: -1.70674e-05
+this is b0: -1.18335e-05
+this is b0: -1.56925e-06
+this is b0: -1.02769e-06
+this is b0: -4.47195e-07
+this is b0: -2.36097e-06
+this is b0: 1.81163e-06
+this is b0: -4.64002e-06
+this is b0: -2.76909e-06
+this is b0: -1.24215e-06
+this is b0: -5.04494e-06
+this is b0: 2.2106e-06
+this is b0: -9.01103e-07
+this is b0: -4.21205e-06
+this is b0: 1.87758e-06
+this is b0: 7.73252e-06
+this is b0: 7.55493e-06
+this is b0: -9.57766e-07
+this is b0: -4.09708e-06
+this is b0: -1.62978e-06
+this is b0: -4.13192e-06
+this is b0: 1.76805e-06
+this is b0: 5.5857e-06
+this is b0: 7.42766e-06
+this is b0: 7.33251e-06
+this is b0: 8.09794e-07
+this is b0: -5.94277e-06
+this is b0: -1.35611e-07
+this is b0: -8.00357e-08
+this is b0: 1.33689e-06
+this is b0: 6.87579e-07
+this is b0: -3.94035e-07
+this is b0: 8.32806e-06
+this is b0: 2.32999e-06
+this is b0: -1.3539e-06
+this is b0: -6.73179e-06
+this is b0: -1.11488e-05
+this is b0: -1.61163e-06
+this is b0: 3.02761e-06
+this is b0: 1.05513e-06
+this is b0: -1.87823e-06
+this is b0: -4.86431e-06
+this is b0: -5.69318e-06
+this is b0: -2.96683e-06
+this is b0: 5.75245e-06
+this is b0: 4.68757e-06
+this is b0: 2.93424e-06
+this is b0: 5.62772e-07
+this is b0: -1.19494e-06
+this is b0: 7.3709e-07
+this is b0: 4.38135e-06
+this is b0: -3.35135e-06
+this is b0: -3.7996e-07
+this is b0: -1.71178e-07
+this is b0: 8.20995e-07
+this is b0: -1.49432e-07
+this is b0: 3.5305e-06
+this is b0: 2.75383e-06
+Day: 16733-
+
+
+ :::::::: SEARCH ::::::::
+
+b0 = 8.46685e-05 sx^2 = 2.5e-05
+Here: FAILURE 477 in genHijl: Eij matrix could not be inverted!
+(62,62) element is zero!
