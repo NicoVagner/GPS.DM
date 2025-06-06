@@ -1,0 +1,1848 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     76012,       1840]
+NotebookOptionsPosition[     73910,       1798]
+NotebookOutlinePosition[     74307,       1814]
+CellTagsIndexPosition[     74264,       1811]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Parameters", " ", 
+    RowBox[{"(", 
+     RowBox[{"assuming", " ", "from", " ", "previous", " ", "cell"}], ")"}]}],
+    "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"vL", "=", "220"}], ";", 
+    RowBox[{"v0", "=", "220"}], ";", 
+    RowBox[{"ve", "=", "544"}], ";"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "normalizationConstantCRecomputed", " ", "should", " ", "be", " ", 
+    "defined", " ", "from", " ", "previous", " ", "calculation"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{"Ensure", " ", "vPerpMax", " ", "is", " ", "defined"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"vPerpMax", "[", 
+      RowBox[{"x_", "?", "NumericQ"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"valUnderSqrt", ",", "result"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"valUnderSqrt", "=", 
+         RowBox[{
+          RowBox[{"ve", "^", "2"}], "-", 
+          RowBox[{
+           RowBox[{"vL", "^", "2"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{"x", "^", "2"}]}], ")"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"valUnderSqrt", "<", "0"}], ",", "0", ",", 
+          RowBox[{
+           RowBox[{"result", "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "vL"}], " ", "x"}], "+", 
+             RowBox[{"Sqrt", "[", "valUnderSqrt", "]"}]}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"result", "<", "0"}], ",", "0", ",", "result"}], 
+            "]"}]}]}], "]"}]}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Ensure", " ", "jointPDFValue", " ", "is", " ", "defined", " ", 
+     RowBox[{"(", 
+      RowBox[{"and", " ", "uses", " ", "normalizationConstantCRecomputed"}], 
+      ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"jointPDFValue", "[", 
+      RowBox[{
+       RowBox[{"vPerp_", "?", "NumericQ"}], ",", 
+       RowBox[{"x_", "?", "NumericQ"}]}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"maxVp", ",", "pdfValUnnormalized"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "<=", "x", "<=", "1"}], ")"}]}], ",", 
+          RowBox[{
+           RowBox[{"Return", "[", "0.0", "]"}], ";"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"Or", " ", "handle", " ", "error"}], "*)"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"maxVp", "=", 
+         RowBox[{"vPerpMax", "[", "x", "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"vPerp", "<=", "0"}], "||", 
+           RowBox[{"vPerp", ">", "maxVp"}]}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"vPerp", "<=", 
+            RowBox[{"0", " ", "instead", " ", "of"}], "<", 
+            RowBox[{"0", " ", "because", " ", "log", 
+             RowBox[{"(", "0", ")"}], " ", "is", " ", "undefined"}]}], "*)"}],
+           "0.0", ",", 
+          RowBox[{
+           RowBox[{"pdfValUnnormalized", "=", 
+            RowBox[{"vPerp", "*", 
+             RowBox[{"Exp", "[", 
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"vPerp", "+", 
+                   RowBox[{"vL", " ", "x"}]}], ")"}], "^", "2"}]}], "/", 
+               RowBox[{"v0", "^", "2"}]}], "]"}]}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+           "normalizationConstantCRecomputed", "*", 
+            "pdfValUnnormalized"}]}]}], "]"}]}]}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Your", " ", "data", " ", "points", " ", 
+     RowBox[{"(", 
+      RowBox[{"assuming", " ", "from", " ", "previous", " ", "cell"}], 
+      ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dataPoints", "=", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], "}"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"--", 
+       RowBox[{"-", "Log"}]}], " ", "Contour", " ", 
+      RowBox[{"Plot", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<Plotting the Log Contour Plot...\>\"", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "Define", " ", "a", " ", "safe", " ", "log", " ", "function", " ", 
+      "that", " ", "returns", " ", "a", " ", "very", " ", "small", " ", 
+      "number", " ", "for", " ", "non"}], "-", 
+     RowBox[{"positive", " ", "inputs"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"This", " ", "helps", " ", "avoid", " ", "errors", " ", "with", " ", 
+     RowBox[{"Log", "[", "0", "]"}], " ", "or", " ", 
+     RowBox[{"Log", "[", "negative", "]"}], " ", "if", " ", "PDF", " ", "is", 
+     " ", "exactly", " ", "zero"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"safeLog", "[", "val_", "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"val", ">", "0"}], ",", 
+       RowBox[{"Log", "[", 
+        RowBox[{"10", ",", "val"}], "]"}], ",", 
+       RowBox[{"-", "Infinity"}]}], "]"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Using", " ", "Log10", " ", "for", " ", "easier", " ", "interpretation", " ",
+      "of", " ", "levels"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "Or", " ", "use", " ", "a", " ", "very", " ", "small", " ", "number", " ",
+       "like"}], "-", 
+     RowBox[{"20", " ", "if"}], "-", 
+     RowBox[{"Infinity", " ", "causes", " ", "issues"}]}], "*)"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Find", " ", "the", " ", "approximate", " ", "range", " ", "of", " ", 
+     "the", " ", "PDF", " ", "values", " ", "to", " ", "set", " ", "log", " ",
+      "contour", " ", "levels"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"This", " ", "is", " ", "a", " ", "bit", " ", 
+     RowBox[{"heuristic", ":", 
+      RowBox[{
+      "sample", " ", "some", " ", "points", " ", "or", " ", "use", " ", "the",
+        " ", "max", " ", "of", " ", "unnormalized"}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"maxPdfApprox", "=", 
+     RowBox[{"normalizationConstantCRecomputed", "*", 
+      RowBox[{"Max", "[", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"unnormalizedPdf", "[", 
+          RowBox[{"vP", ",", "xVal"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"xVal", ",", 
+           RowBox[{"-", "1"}], ",", "1", ",", "0.1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"vP", ",", "1", ",", 
+           RowBox[{
+            RowBox[{"vPerpMax", "[", "xVal", "]"}], "-", "1"}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"vPerpMax", "[", "xVal", "]"}], "-", "1"}], ")"}], "/", 
+            "20.0"}]}], "}"}]}], "]"}], "]"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"minPdfApproxLog", "=", 
+     RowBox[{"-", "7"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Guess", " ", "a", " ", "minimum", " ", "log10", " ", "value"}], 
+     ",", 
+     RowBox[{"e", ".", "g", "."}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "7"}]}]}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"maxPdfApproxLog", "=", 
+     RowBox[{"Floor", "[", 
+      RowBox[{"Log10", "[", "maxPdfApprox", "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Approximate max PDF value: \>\"", ",", "maxPdfApprox"}], 
+     "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Log10 of approx max PDF: \>\"", ",", "maxPdfApproxLog"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Define", " ", "explicit", " ", "contour", " ", "levels", " ", "on", " ", 
+     "a", " ", "log", " ", "scale"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"For", " ", "example"}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "6"}]}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "5"}]}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "4"}]}], ",", "..."}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"logContourLevels", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"10", "^", "k"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "k", ",", "minPdfApproxLog", ",", "maxPdfApproxLog", ",", "1"}], 
+        "}"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"logContourValuesForPlotting", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"k", ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "k", ",", "minPdfApproxLog", ",", "maxPdfApproxLog", ",", "1"}], 
+        "}"}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"logContourPlot", "=", 
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{"safeLog", "[", 
+        RowBox[{"jointPDFValue", "[", 
+         RowBox[{"vP", ",", "xVal"}], "]"}], "]"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Plot", " ", "the", " ", "Log10", " ", "of", " ", "the", " ", "PDF", " ",
+          "value"}], "*)"}], 
+       RowBox[{"{", 
+        RowBox[{"xVal", ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"vP", ",", "0", ",", 
+         RowBox[{"ve", "+", "vL"}]}], "}"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"minPdfApproxLog", "-", "1"}], ",", 
+          RowBox[{"maxPdfApproxLog", "+", "1"}]}], "}"}]}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Range", " ", "for", " ", "the", " ", "log", " ", "values"}], 
+        "*)"}], 
+       RowBox[{"ColorFunction", "->", "\"\<Viridis\>\""}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Contours", "->", "logContourValuesForPlotting"}], ","}], 
+        "*)"}], 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Explicitly", " ", "set", " ", "log"}], "-", 
+         RowBox[{
+         "spaced", " ", "contours", " ", "based", " ", "on", " ", "log", " ", 
+          "values"}]}], "*)"}], 
+       RowBox[{"Contours", "->", "10"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "Or", " ", "let", " ", "Mathematica", " ", "choose", " ", "based", " ",
+           "on", " ", "the", " ", "log"}], "-", 
+         RowBox[{"transformed", " ", "data"}]}], "*)"}], 
+       RowBox[{"PlotLegends", "->", "Automatic"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Legend", " ", "will", " ", "show", " ", "log", " ", "values"}], 
+        "*)"}], 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<x = Cos[\[Theta]]\>\"", 
+          ",", "\"\<v\[UpTee] (km/s)\>\""}], "}"}]}], ",", 
+       RowBox[{"LabelStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", 
+          RowBox[{"FontColor", "->", "Black"}], ",", 
+          RowBox[{"FontSize", "->", "24"}]}], "}"}]}], ",", 
+       RowBox[{
+       "PlotLabel", "->", "\"\<Log_10 Contour Plot of P(v\[UpTee], x)\>\""}], 
+       ",", 
+       RowBox[{"LabelStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", 
+          RowBox[{"FontColor", "->", "Black"}], ",", 
+          RowBox[{"FontSize", "->", "24"}]}], "}"}]}], ",", 
+       RowBox[{"BaseStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", 
+          RowBox[{"FontColor", "->", "Black"}], ",", 
+          RowBox[{"FontSize", "->", "24"}]}], "}"}]}], ",", 
+       RowBox[{"ImageSize", "->", "Large"}], ",", 
+       RowBox[{"RegionFunction", "->", 
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x", ",", "vp", ",", "fval"}], "}"}], ",", 
+          RowBox[{"0", "<=", "vp", "<=", 
+           RowBox[{"vPerpMax", "[", "x", "]"}]}]}], "]"}]}], ",", 
+       RowBox[{"Exclusions", "->", "None"}], ",", 
+       RowBox[{"MaxRecursion", "->", "3"}], ",", 
+       RowBox[{"PlotPoints", "->", "75"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Display", " ", "the", " ", "plot"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", "logContourPlot", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.957889793578272*^9, 3.957889793580153*^9}, {
+   3.957890894039222*^9, 3.957890895317163*^9}, {3.958049301688548*^9, 
+   3.958049302102611*^9}, 3.9580501310306168`*^9, {3.9580502027759113`*^9, 
+   3.9580502089059153`*^9}, {3.9580504806191263`*^9, 3.958050484886105*^9}, {
+   3.958050635871088*^9, 3.9580506384092073`*^9}, {3.9580506902083197`*^9, 
+   3.958050695177866*^9}, {3.958050834943348*^9, 3.958050840938044*^9}, {
+   3.9580508861566887`*^9, 3.9580509098024178`*^9}},
+ CellLabel->
+  "In[276]:=",ExpressionUUID->"77a3ca66-800b-46e7-8fe3-96a7f6626006"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Plotting the Log Contour Plot...\"\>"], "Print",
+ CellChangeTimes->{3.9578897945232*^9, 3.957889872314125*^9, 
+  3.957890896070324*^9, 3.958049201872945*^9, 3.9580496075246687`*^9, 
+  3.958050211584487*^9, 3.95805048526291*^9, 3.958050588387012*^9, 
+  3.9580506391755733`*^9, 3.958050847648696*^9, 3.95805091219066*^9},
+ CellLabel->
+  "During evaluation of \
+In[276]:=",ExpressionUUID->"bc14c24a-08e7-4344-a7b7-71bf61aa6c57"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate max PDF value: \"\>", "\[InvisibleSpace]", 
+   "0.004174994253444211`"}],
+  SequenceForm["Approximate max PDF value: ", 0.004174994253444211],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9578897945232*^9, 3.957889872314125*^9, 
+  3.957890896070324*^9, 3.958049201872945*^9, 3.9580496075246687`*^9, 
+  3.958050211584487*^9, 3.95805048526291*^9, 3.958050588387012*^9, 
+  3.9580506391755733`*^9, 3.958050847648696*^9, 3.958050912191063*^9},
+ CellLabel->
+  "During evaluation of \
+In[276]:=",ExpressionUUID->"ef6708f9-8710-4073-82d0-066cccb1e19f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Log10 of approx max PDF: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "3"}]}],
+  SequenceForm["Log10 of approx max PDF: ", -3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9578897945232*^9, 3.957889872314125*^9, 
+  3.957890896070324*^9, 3.958049201872945*^9, 3.9580496075246687`*^9, 
+  3.958050211584487*^9, 3.95805048526291*^9, 3.958050588387012*^9, 
+  3.9580506391755733`*^9, 3.958050847648696*^9, 3.9580509121917*^9},
+ CellLabel->
+  "During evaluation of \
+In[276]:=",ExpressionUUID->"808ab479-6e47-4cfa-bc1c-969c166809b5"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "cfun", 
+   "\"Value of option ColorFunction -> \\!\\(\\*RowBox[{\\\"\\\\\\\"Viridis\\\
+\\\\\"\\\"}]\\) is not a valid color function, or a gradient ColorData \
+entity.\"", 2, 288, 49, 23658118080560893636, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.957889794542632*^9, 3.957889872330784*^9, 
+  3.9578908960873213`*^9, 3.958049202441029*^9, 3.958049607549026*^9, 
+  3.958050211602241*^9, 3.9580504852772627`*^9, 3.958050588408389*^9, 
+  3.95805063919561*^9, 3.9580508476696053`*^9, 3.958050912208921*^9},
+ CellLabel->
+  "During evaluation of \
+In[276]:=",ExpressionUUID->"25f56639-f722-44e1-88f6-c442be5c59d3"],
+
+Cell[BoxData[
+ TemplateBox[{"", 
+   FormBox[
+    FormBox[
+     TemplateBox[{
+       FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+          "", Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], StripOnInput -> False, LineIndent -> 0], 
+         StripOnInput -> False, FontFamily -> "Arial", FontSize -> 24, 
+         FontColor -> GrayLevel[0], Background -> Automatic], 
+        TraditionalForm]}, "BarLegend", DisplayFunction -> (#& ), 
+      InterpretationFunction :> (RowBox[{"BarLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{
+                 RowBox[{"Blend", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.293416, 0.0574044, 0.529412]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> 
+                    RGBColor[
+                    0.563820859082933, 0.527565423056382, 
+                    0.909498741130694]|>, "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.762631, 0.846998, 0.914031]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.941176, 0.906538, 0.834043]|>, 
+                    "RGBColorSwatchTemplate"]}], "}"}], ",", "#1"}], "]"}], 
+                 "&"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "8.`"}], ",", 
+                   RowBox[{"-", "2.3789930244204034`"}]}], "}"}]}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.5600000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.0200000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "6.48`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.94`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.4`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.86`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.32`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.7800000000000002`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.24`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "2.7`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}]}], "}"}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Arial\""}], ",", 
+                 RowBox[{"FontColor", "\[Rule]", 
+                   
+                   TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"]}], ",", 
+                 RowBox[{"FontSize", "\[Rule]", "24"}]}], "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkerSize", "\[Rule]", "576"}], ",", 
+           RowBox[{"ScalingFunctions", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", 
+           RowBox[{"Charting`AxisLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"Charting`TickSide", "\[Rule]", "Right"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}]}], "]"}]& )], 
+     TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.9578897945232*^9, 3.957889872314125*^9, 3.957890896070324*^9, 
+   3.958049201872945*^9, 3.9580496075246687`*^9, 3.958050211584487*^9, 
+   3.95805048526291*^9, 3.958050588387012*^9, 3.9580506391755733`*^9, 
+   3.958050847648696*^9, 3.958050943940029*^9, {3.95822976536168*^9, 
+   3.9582297664436283`*^9}},ExpressionUUID->"f7f103a6-f5fb-4bb8-9abd-\
+430a373287f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", "Ensure"}]}], " ", "previous", " ", "definitions", " ", 
+     "are", " ", 
+     RowBox[{"available", "--"}]}], "-"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Parameters", ":", "vL"}], ",", "v0", ",", "ve"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Functions", ":", 
+     RowBox[{"vPerpMax", "[", 
+      RowBox[{"x_", "?", "NumericQ"}], "]"}]}], ",", 
+    RowBox[{"jointPDFValue", "[", 
+     RowBox[{"vPerp_", ",", "x_"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"safeLog", "[", "val_", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"if", " ", "using", " ", "the", " ", "log"}], "-", "of", "-", 
+       RowBox[{"PDF", " ", "method"}]}], ")"}]}]}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{"Calculated", ":", "normalizationConstantCRecomputed"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{"Existing", " ", 
+    RowBox[{"Plot", ":", 
+     RowBox[{
+     "logContourPlot", " ", "or", " ", "contourPlotWithLogSpacing"}]}]}], 
+   "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{"Data", " ", 
+    RowBox[{"Points", ":", "dataPoints"}]}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", "Plot"}]}], " ", "the", " ", "Cutoff", " ", "Function", " ", 
+     RowBox[{"Separately", "--"}]}], "-"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cutoffFunctionPlot", "=", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"vPerpMax", "[", "xVal", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"xVal", ",", 
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", "Red", "}"}]}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Style", " ", "for", " ", "the", " ", "cutoff", " ", "line"}],
+         "*)"}], 
+       RowBox[{"PlotRange", "->", "All"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+          "Let", " ", "it", " ", "determine", " ", "its", " ", "own", " ", 
+           "y"}], "-", "range"}], ",", 
+         RowBox[{"Show", " ", "will", " ", "handle", " ", "overall"}]}], 
+        "*)"}], 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Axes", "->", "False"}], ","}], 
+        RowBox[{"(*", 
+         RowBox[{"Optional", ":", 
+          RowBox[{
+          "hide", " ", "axes", " ", "if", " ", "only", " ", "for", " ", 
+           "overlay"}]}], "*)"}], "*)"}], 
+       RowBox[{"PerformanceGoal", "->", "\"\<Quality\>\""}]}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"--", 
+       RowBox[{"-", "Combine"}]}], " ", "with", " ", "the", " ", "existing", " ",
+       "Log", " ", "Contour", " ", "Plot", " ", "using", " ", 
+      RowBox[{"Show", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Choose", " ", "which", " ", "log", " ", "contour", " ", "plot", " ", 
+     "you", " ", "want", " ", "to", " ", "use"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Option", " ", "1"}], ":", 
+     RowBox[{
+     "If", " ", "you", " ", "used", " ", "the", " ", "first", " ", "method", " ", 
+      RowBox[{"(", 
+       RowBox[{"plotting", " ", "Log10", " ", "of", " ", "PDF"}], ")"}]}]}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Ensure", "'"}], 
+     RowBox[{"logContourPlot", "'"}], " ", "is", " ", "defined", " ", "from", 
+     " ", "your", " ", "previous", " ", "run"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ValueQ", "[", "logContourPlot", "]"}], "&&", 
+       RowBox[{"ValueQ", "[", "normalizationConstantCRecomputed", "]"}]}], ",", 
+      RowBox[{
+       RowBox[{
+       "Print", 
+        "[", "\"\<Showing Log_10 Contour Plot with Cutoff Function...\>\"", 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"logContourPlotWithCutoff", "=", 
+        RowBox[{"Show", "[", 
+         RowBox[{"logContourPlot", ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "Your", " ", "existing", " ", "log", " ", "contour", " ", "plot"}],
+            "*)"}], "cutoffFunctionPlot", ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "The", " ", "plot", " ", "of", " ", "the", " ", "v_perp", "_max", " ",
+             "function"}], "*)"}], 
+          RowBox[{
+          "PlotLabel", 
+           "->", "\"\<Log_10 Contour Plot of P(v\[UpTee], x) with Escape \
+Velocity Cutoff\>\""}], ",", 
+          RowBox[{"PlotLegends", "->", 
+           RowBox[{"Append", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Cases", "[", 
+               RowBox[{"logContourPlot", ",", "_Legend", ",", "Infinity"}], 
+               "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{"(*", 
+              RowBox[{"Get", " ", "existing", " ", "legend"}], "*)"}], 
+             RowBox[{"LineLegend", "[", 
+              RowBox[{
+               RowBox[{"{", "Blue", "}"}], ",", 
+               RowBox[{
+               "{", "\"\<v\[UpTee],max(x) (Escape Cutoff)\>\"", "}"}]}], 
+              "]"}]}], " ", 
+            RowBox[{"(*", 
+             RowBox[{"Add", " ", "new", " ", "legend", " ", "entry"}], "*)"}],
+             "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "logContourPlotWithCutoff", "]"}], ";"}], ",", 
+      RowBox[{
+       RowBox[{
+       "Print", 
+        "[", "\"\<'logContourPlot' or 'normalizationConstantCRecomputed' not \
+defined. Please generate it first.\>\"", "]"}], ";"}]}], "]"}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.957889987222631*^9, 3.9578900187012453`*^9}, {
+  3.957890048864912*^9, 3.9578900536868773`*^9}, {3.957890097993195*^9, 
+  3.9578901377564096`*^9}, {3.957890880774939*^9, 3.9578908811050386`*^9}, {
+  3.9580492628932447`*^9, 3.958049270125637*^9}},
+ CellLabel->
+  "In[290]:=",ExpressionUUID->"4f2a6011-54d6-42ed-b145-c9213d088bd4"],
+
+Cell[BoxData["\<\"Showing Log_10 Contour Plot with Cutoff Function...\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.95789023319545*^9, 3.957890881477325*^9, 3.9578911827190847`*^9, 
+   3.958049233459002*^9, {3.958049263878511*^9, 3.958049271762206*^9}, 
+   3.958050248224208*^9, 3.958050983574112*^9},
+ CellLabel->
+  "During evaluation of \
+In[290]:=",ExpressionUUID->"c45d250e-19e9-478a-af77-65386f04767e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "partw", 
+   "\"Part \\!\\(\\*RowBox[{\\\"1\\\"}]\\) of \\!\\(\\*RowBox[{\\\"{\\\", \
+\\\"}\\\"}]\\) does not exist.\"", 2, 291, 50, 23658118080560893636, "Local"},
+  
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{
+  3.957890233247678*^9, 3.957890881523281*^9, 3.957891182763698*^9, 
+   3.958049233500681*^9, {3.958049263922798*^9, 3.958049271803698*^9}, 
+   3.958050248262824*^9, 3.958050983617571*^9},
+ CellLabel->
+  "During evaluation of \
+In[290]:=",ExpressionUUID->"d5391d3d-7e48-43d3-8774-21633f29c76f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part", "pkspec1", 
+   "\"The expression \
+\\!\\(\\*TemplateBox[List[\\\"\\\\\\\"v\\\\[UpTee],max(x) (Escape Cutoff)\\\\\
+\\\"\\\"], \\\"LineLegend\\\", Rule[DisplayFunction, \
+Function[StyleBox[StyleBox[PaneBox[TagBox[GridBox[List[List[TagBox[GridBox[\
+List[List[GraphicsBox[List[List[Directive[EdgeForm[Directive[Opacity[0.3`], \
+GrayLevel[0]]], PointSize[0.5`], AbsoluteThickness[1.6`], RGBColor[0, 0, 1]], \
+List[LineBox[List[List[0, 12.5`], List[20, 12.5`]]]]], \
+List[Directive[EdgeForm[Directive[Opacity[0.3`], GrayLevel[0]]], \
+PointSize[0.5`], AbsoluteThickness[1.6`], RGBColor[0, 0, 1]], List[]]], \
+Rule[AspectRatio, Full], Rule[ImageSize, List[20, 12.5`]], \
+Rule[PlotRangePadding, None], Rule[ImagePadding, Automatic], \
+Rule[BaselinePosition, Rule[Scaled[0.18000000000000002`], Baseline]]], \
+Slot[1]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[Center, \
+Left]], Rule[\\\"Rows\\\", List[List[Baseline]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxDividers, List[Rule[\\\"Columns\\\", List[List[False]]], \
+Rule[\\\"Rows\\\", List[List[False]]]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[List[All]]], Rule[\\\"Rows\\\", \
+List[List[All]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0.5`]]], Rule[\\\"Rows\\\", List[List[0.8`]]]]]], \\\"Grid\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[1]]], Rule[\\\"Rows\\\", List[List[0]]]]]], \
+\\\"Grid\\\"], Rule[Alignment, Left], Rule[AppearanceElements, None], \
+Rule[ImageMargins, List[List[5, 5], List[5, 5]]], Rule[ImageSizeAction, \
+\\\"ResizeToFit\\\"]], Rule[LineIndent, 0], Rule[StripOnInput, False]], \
+List[Rule[FontFamily, \\\"Arial\\\"]], Rule[Background, Automatic], \
+Rule[StripOnInput, False]]]], RuleDelayed[InterpretationFunction, \
+Function[RowBox[List[\\\"LineLegend\\\", \\\"[\\\", \
+RowBox[List[RowBox[List[\\\"{\\\", \
+TemplateBox[Association[Rule[\\\"color\\\", RGBColor[0, 0, 1]]], \
+\\\"RGBColorSwatchTemplate\\\"], \\\"}\\\"]], \\\",\\\", \
+RowBox[List[\\\"{\\\", Slot[1], \\\"}\\\"]]]], \\\"]\\\"]]]], Rule[Editable, \
+True]]\\) cannot be used as a part specification.\"", 2, 291, 51, 
+   23658118080560893636, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{
+  3.957890233247678*^9, 3.957890881523281*^9, 3.957891182763698*^9, 
+   3.958049233500681*^9, {3.958049263922798*^9, 3.958049271803698*^9}, 
+   3.958050248262824*^9, 3.958050983627366*^9},
+ CellLabel->
+  "During evaluation of \
+In[290]:=",ExpressionUUID->"d4a2ba37-4919-40d6-a319-edd34f2344af"],
+
+Cell[BoxData[
+ TemplateBox[{"", 
+   FormBox[
+    FormBox[
+     TemplateBox[{
+       FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+          "", Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], StripOnInput -> False, LineIndent -> 0], 
+         StripOnInput -> False, FontFamily -> "Arial", FontSize -> 24, 
+         FontColor -> GrayLevel[0], Background -> Automatic], 
+        TraditionalForm]}, "BarLegend", DisplayFunction -> (#& ), 
+      InterpretationFunction :> (RowBox[{"BarLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{
+                 RowBox[{"Blend", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.293416, 0.0574044, 0.529412]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> 
+                    RGBColor[
+                    0.563820859082933, 0.527565423056382, 
+                    0.909498741130694]|>, "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.762631, 0.846998, 0.914031]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.941176, 0.906538, 0.834043]|>, 
+                    "RGBColorSwatchTemplate"]}], "}"}], ",", "#1"}], "]"}], 
+                 "&"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "8.`"}], ",", 
+                   RowBox[{"-", "2.3789930244204034`"}]}], "}"}]}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.5600000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.0200000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "6.48`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.94`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.4`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.86`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.32`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.7800000000000002`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.24`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "2.7`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}]}], "}"}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Arial\""}], ",", 
+                 RowBox[{"FontColor", "\[Rule]", 
+                   
+                   TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"]}], ",", 
+                 RowBox[{"FontSize", "\[Rule]", "24"}]}], "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkerSize", "\[Rule]", "576"}], ",", 
+           RowBox[{"ScalingFunctions", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", 
+           RowBox[{"Charting`AxisLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"Charting`TickSide", "\[Rule]", "Right"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}]}], "]"}]& )], 
+     TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.95789023319545*^9, 3.957890881477325*^9, 3.9578911827190847`*^9, 
+   3.958049233459002*^9, {3.958049263878511*^9, 3.958049271762206*^9}, 
+   3.958050248224208*^9, 3.958050983886621*^9, {3.958229767798003*^9, 
+   3.958229768931171*^9}},ExpressionUUID->"a720eac5-a56b-4eb6-a28d-\
+ee941b010d4b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"logContourPlot", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"safeLog", "[", 
+       RowBox[{"jointPDFValue", "[", 
+        RowBox[{"vP", ",", "xVal"}], "]"}], "]"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Plot", " ", "the", " ", "Log10", " ", "of", " ", "the", " ", "PDF", " ",
+         "value"}], "*)"}], 
+      RowBox[{"{", 
+       RowBox[{"xVal", ",", 
+        RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"vP", ",", "0", ",", 
+        RowBox[{"ve", "+", "vL"}]}], "}"}], ",", 
+      RowBox[{"PlotRange", "->", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"minPdfApproxLog", "-", "1"}], ",", 
+         RowBox[{"maxPdfApproxLog", "+", "1"}]}], "}"}]}], ",", 
+      RowBox[{"(*", 
+       RowBox[{"Range", " ", "for", " ", "the", " ", "log", " ", "values"}], 
+       "*)"}], 
+      RowBox[{"ColorFunction", "->", "\"\<Viridis\>\""}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Contours", "->", "logContourValuesForPlotting"}], ","}], 
+       "*)"}], 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Explicitly", " ", "set", " ", "log"}], "-", 
+        RowBox[{
+        "spaced", " ", "contours", " ", "based", " ", "on", " ", "log", " ", 
+         "values"}]}], "*)"}], 
+      RowBox[{"Contours", "->", "10"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{
+        "Or", " ", "let", " ", "Mathematica", " ", "choose", " ", "based", " ",
+          "on", " ", "the", " ", "log"}], "-", 
+        RowBox[{"transformed", " ", "data"}]}], "*)"}], 
+      RowBox[{"PlotLegends", "->", "Automatic"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Legend", " ", "will", " ", "show", " ", "log", " ", "values"}], 
+       "*)"}], 
+      RowBox[{"FrameLabel", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<x = Cos[\[Theta]]\>\"", 
+         ",", "\"\<v\[UpTee] (km/s)\>\""}], "}"}]}], ",", 
+      RowBox[{
+      "PlotLabel", "->", "\"\<Log_10 Contour Plot of P(v\[UpTee], x)\>\""}], ",", 
+      RowBox[{"BaseStyle", "->", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FontFamily", "->", "\"\<Arial\>\""}], ",", 
+         RowBox[{"FontSize", "->", "24"}], ",", 
+         RowBox[{"FontColor", "->", "Black"}]}], "}"}]}], ",", 
+      RowBox[{"ImageSize", "->", "Large"}], ",", 
+      RowBox[{"RegionFunction", "->", 
+       RowBox[{"Function", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "vp", ",", "fval"}], "}"}], ",", 
+         RowBox[{"0", "<=", "vp", "<=", 
+          RowBox[{"vPerpMax", "[", "x", "]"}]}]}], "]"}]}], ",", 
+      RowBox[{"Exclusions", "->", "None"}], ",", 
+      RowBox[{"MaxRecursion", "->", "3"}], ",", 
+      RowBox[{"PlotPoints", "->", "75"}], ",", 
+      RowBox[{"Epilog", "->", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "[", "Medium", "]"}], ",", "Red", ",", 
+         RowBox[{"Point", "[", "dataPoints", "]"}]}], "}"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Display", " ", "the", " ", "plot"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "logContourPlot", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.958049328656251*^9, 3.958049328953166*^9}, {
+  3.958049377696912*^9, 3.958049385553912*^9}},
+ CellLabel->
+  "In[115]:=",ExpressionUUID->"373cc605-3b3c-4d00-97b4-31289c83e841"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ContourPlot", "cfun", 
+   "\"Value of option ColorFunction -> \\!\\(\\*RowBox[{\\\"\\\\\\\"Viridis\\\
+\\\\\"\\\"}]\\) is not a valid color function, or a gradient ColorData \
+entity.\"", 2, 115, 27, 23658118080560893636, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.9580493296611433`*^9, 3.9580493861516333`*^9},
+ CellLabel->
+  "During evaluation of \
+In[115]:=",ExpressionUUID->"b3964d40-1393-4846-b5eb-6985955cb49c"],
+
+Cell[BoxData[
+ TemplateBox[{"", 
+   FormBox[
+    FormBox[
+     TemplateBox[{
+       FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+          "", Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], StripOnInput -> False, LineIndent -> 0], 
+         StripOnInput -> False, FontFamily -> "Arial", Background -> 
+         Automatic], TraditionalForm]}, "BarLegend", DisplayFunction -> (#& ),
+       InterpretationFunction :> (RowBox[{"BarLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{
+                 RowBox[{"Blend", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.293416, 0.0574044, 0.529412]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> 
+                    RGBColor[
+                    0.563820859082933, 0.527565423056382, 
+                    0.909498741130694]|>, "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.762631, 0.846998, 0.914031]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.941176, 0.906538, 0.834043]|>, 
+                    "RGBColorSwatchTemplate"]}], "}"}], ",", "#1"}], "]"}], 
+                 "&"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "8.`"}], ",", 
+                   RowBox[{"-", "2.3789930244204034`"}]}], "}"}]}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.5600000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.0200000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "6.48`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.94`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.4`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.86`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.32`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.7800000000000002`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.24`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "2.7`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}]}], "}"}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkerSize", "\[Rule]", "576"}], ",", 
+           RowBox[{"ScalingFunctions", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", 
+           RowBox[{"Charting`AxisLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"Charting`TickSide", "\[Rule]", "Right"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}]}], "]"}]& )], 
+     TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.9580493604361134`*^9, 3.958049417276732*^9, {3.958229770240494*^9, 
+   3.958229771372705*^9}},ExpressionUUID->"d56f98f1-258e-4f68-895f-\
+c1db8290f490"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", "DEFINE"}]}], " ", "YOUR", " ", "NEW", " ", "DATA", " ", 
+     "POINT", " ", 
+     RowBox[{"LISTS", "--"}]}], "-"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{"Example", ":", 
+    RowBox[{
+    "Replace", " ", "these", " ", "with", " ", "your", " ", "actual", " ", 
+     "data"}]}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dataPointsRed", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.6992756731", ",", "63.3276"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.3376558503", ",", "574.013"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.4971087488", ",", "44.5324"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.5125686769"}], ",", "37.4368"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.5223405155"}], ",", "256.395"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.8068992844"}], ",", "625.29"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.204503569", ",", "377.336"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.4244257393", ",", "506.321"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.5811038631", ",", "421.639"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.4800155865", ",", "34.3478"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.6049877447", ",", "620.421"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.8181208135"}], ",", "478.099"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.4092539863", ",", "615.697"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.9094448043", ",", "455.761"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.8817642362"}], ",", "644.776"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.8386352048", ",", "501.017"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.8652510128"}], ",", "27.3333"}], "}"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"...", " ", "more", " ", "red", " ", "points"}], "..."}], 
+       "*)"}], "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dataPointsBlue", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.5309824637"}], ",", "529.124"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.6920494457", ",", "215.637"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.3143245116"}], ",", "554.585"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.4304156307", ",", "599.759"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.6926818845", ",", "541.832"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.5233126353", ",", "556.565"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.8957978833"}], ",", "388.261"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.7679659202"}], ",", "627.845"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.5150859474", ",", "278.817"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.6901330266", ",", "611.991"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.7693123658", ",", "545.824"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.8443918868", ",", "644.127"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.4772572288"}], ",", "595.277"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.08096124055", ",", "459.445"}], "}"}]}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"...", " ", "more", " ", "blue", " ", "points"}], "..."}], 
+       "*)"}], "}"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"--", 
+       RowBox[{"-", "USING"}]}], " ", "SHOW", " ", "WITH", " ", "AN", " ", 
+      "EXISTING", " ", "CONTOUR", " ", "PLOT", " ", "AND", " ", "CUTOFF", " ", 
+      RowBox[{"PLOT", "--"}]}], "-"}], "*)"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Assume", "'"}], 
+     RowBox[{"existingContourPlot", "'"}], " ", "holds", " ", "your", " ", 
+     "contour", " ", "plot", " ", "graphic", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"e", ".", "g", "."}], ",", 
+       RowBox[{
+       "logContourPlot", " ", "or", " ", "contourPlotWithLogSpacing"}]}], 
+      ")"}]}], "*)"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Assume", "'"}], 
+     RowBox[{"cutoffFunctionPlot", "'"}], " ", "holds", " ", "the", " ", 
+     "plot", " ", "of", " ", "the", " ", "vPerpMax", " ", "line"}], "*)"}], 
+   RowBox[{"(*", 
+    RowBox[{
+    "Create", " ", "ListPlot", " ", "objects", " ", "for", " ", "the", " ", 
+     "new", " ", "data", " ", "points"}], "*)"}], 
+   RowBox[{
+    RowBox[{"listPlotRed", "=", 
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"dataPointsRed", ",", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PointSize", "[", "Large", "]"}], ",", "Red"}], "}"}]}]}], 
+      "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"listPlotBlue", "=", 
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"dataPointsBlue", ",", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PointSize", "[", "Large", "]"}], ",", "Blue"}], "}"}]}]}], 
+      "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Combine", " ", "everything"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ValueQ", "[", "logContourPlotWithCutoff", "]"}], "&&", 
+       RowBox[{"ValueQ", "[", "cutoffFunctionPlot", "]"}]}], ",", 
+      RowBox[{"(*", 
+       RowBox[{"Ensure", " ", "base", " ", "plots", " ", "exist"}], "*)"}], 
+      RowBox[{
+       RowBox[{
+       "Print", 
+        "[", "\"\<Showing Contour Plot with Red/Blue Data Points and \
+Cutoff...\>\"", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"finalPlotWithTwoPointSets", "=", 
+        RowBox[{"Show", "[", 
+         RowBox[{
+         "logContourPlotWithCutoff", ",", "cutoffFunctionPlot", ",", 
+          "listPlotRed", ",", "listPlotBlue", ",", 
+          RowBox[{
+          "PlotLabel", "->", "\"\<Contour Plot with Data and Cutoff\>\""}], ",", 
+          RowBox[{"PlotLegends", "->", 
+           RowBox[{"{", 
+            
+            RowBox[{"\"\<PDF Contours (from original plot, may need specific \
+extraction)\>\"", ",", 
+             RowBox[{"LineLegend", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"Directive", "[", 
+                 RowBox[{"Thick", ",", "Dashed", ",", "Blue"}], "]"}], "}"}], 
+               ",", 
+               RowBox[{"{", "\"\<v\[UpTee],max(x) (Cutoff)\>\"", "}"}]}], 
+              "]"}], ",", 
+             RowBox[{"PointLegend", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"Darker", "[", "Red", "]"}], "}"}], ",", 
+               RowBox[{"{", "\"\<Red Data Set\>\"", "}"}]}], "]"}], ",", 
+             RowBox[{"PointLegend", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"Darker", "[", "Blue", "]"}], "}"}], ",", 
+               RowBox[{"{", "\"\<Blue Data Set\>\"", "}"}]}], "]"}]}], 
+            "}"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "finalPlotWithTwoPointSets", "]"}], ";"}], ",", 
+      RowBox[{
+       RowBox[{
+       "Print", 
+        "[", "\"\<'existingContourPlot' or 'cutoffFunctionPlot' not defined. \
+Please generate them first.\>\"", "]"}], ";"}]}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9580498946408043`*^9, 3.9580499339938927`*^9}, {
+  3.9580499916379633`*^9, 3.958050089833743*^9}, {3.958050259362301*^9, 
+  3.958050260567946*^9}, {3.958050434180697*^9, 3.958050444469594*^9}, {
+  3.958051004554932*^9, 3.9580510147646*^9}},
+ CellLabel->
+  "In[297]:=",ExpressionUUID->"ee20decf-f8fd-49ba-bd9d-d8d081f668fb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Showing Contour Plot with Red/Blue Data Points and \
+Cutoff...\"\>"], "Print",
+ CellChangeTimes->{
+  3.958049904394537*^9, {3.9580499364785347`*^9, 3.9580499611199903`*^9}, {
+   3.9580499929878197`*^9, 3.958050020729349*^9}, 3.9580501057794437`*^9, {
+   3.9580502547469187`*^9, 3.958050261529553*^9}, 3.9580504461168423`*^9, {
+   3.958050989211462*^9, 3.958051015238461*^9}},
+ CellLabel->
+  "During evaluation of \
+In[297]:=",ExpressionUUID->"320ae962-0660-4929-8ed0-dbc5051f45dc"],
+
+Cell[BoxData[
+ TemplateBox[{"", 
+   FormBox[
+    FormBox[
+     TemplateBox[{
+       FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+          "", Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], StripOnInput -> False, LineIndent -> 0], 
+         StripOnInput -> False, FontFamily -> "Arial", FontSize -> 24, 
+         FontColor -> GrayLevel[0], Background -> Automatic], 
+        TraditionalForm]}, "BarLegend", DisplayFunction -> (#& ), 
+      InterpretationFunction :> (RowBox[{"BarLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{
+                 RowBox[{"Blend", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.293416, 0.0574044, 0.529412]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> 
+                    RGBColor[
+                    0.563820859082933, 0.527565423056382, 
+                    0.909498741130694]|>, "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.762631, 0.846998, 0.914031]|>, 
+                    "RGBColorSwatchTemplate"], ",", 
+                    
+                    TemplateBox[<|
+                    "color" -> RGBColor[0.941176, 0.906538, 0.834043]|>, 
+                    "RGBColorSwatchTemplate"]}], "}"}], ",", "#1"}], "]"}], 
+                 "&"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "8.`"}], ",", 
+                   RowBox[{"-", "2.3789930244204034`"}]}], "}"}]}], "}"}], 
+           ",", 
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.5600000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "7.0200000000000005`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "6.48`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.94`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "5.4`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.86`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "4.32`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.7800000000000002`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "3.24`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"-", "2.7`"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"], ",", 
+                    RowBox[{"Opacity", "[", "0.5`", "]"}], ",", 
+                    RowBox[{"CapForm", "[", "\"Butt\"", "]"}]}], "]"}]}], 
+                 "}"}]}], "}"}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"FontFamily", "\[Rule]", "\"Arial\""}], ",", 
+                 RowBox[{"FontColor", "\[Rule]", 
+                   
+                   TemplateBox[<|"color" -> GrayLevel[0]|>, 
+                    "GrayLevelColorSwatchTemplate"]}], ",", 
+                 RowBox[{"FontSize", "\[Rule]", "24"}]}], "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkerSize", "\[Rule]", "576"}], ",", 
+           RowBox[{"ScalingFunctions", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", 
+           RowBox[{"Charting`AxisLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"Charting`TickSide", "\[Rule]", "Right"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}]}], "]"}]& )], 
+     TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.958049904394537*^9, {3.9580499364785347`*^9, 3.9580499611199903`*^9}, {
+   3.9580499929878197`*^9, 3.958050020729349*^9}, 3.9580501057794437`*^9, {
+   3.9580502547469187`*^9, 3.958050261529553*^9}, 3.9580504461168423`*^9, {
+   3.958050989211462*^9, 3.958051015448639*^9}, {3.958229773499086*^9, 
+   3.958229774485262*^9}},ExpressionUUID->"b91a8070-94f3-4124-afcd-\
+6f94e02300d4"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1728, 1051},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7c50900c-f773-4cfb-a487-5449bf78d897"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 13275, 341, 968, "Input",ExpressionUUID->"77a3ca66-800b-46e7-8fe3-96a7f6626006"],
+Cell[CellGroupData[{
+Cell[13876, 367, 443, 7, 23, "Print",ExpressionUUID->"bc14c24a-08e7-4344-a7b7-71bf61aa6c57"],
+Cell[14322, 376, 611, 12, 23, "Print",ExpressionUUID->"ef6708f9-8710-4073-82d0-066cccb1e19f"],
+Cell[14936, 390, 582, 12, 23, "Print",ExpressionUUID->"808ab479-6e47-4cfa-bc1c-969c166809b5"]
+}, Open  ]],
+Cell[15533, 405, 698, 14, 26, "Message",ExpressionUUID->"25f56639-f722-44e1-88f6-c442be5c59d3"],
+Cell[16234, 421, 8974, 203, 44, "Print",ExpressionUUID->"f7f103a6-f5fb-4bb8-9abd-430a373287f1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25245, 629, 6015, 158, 315, "Input",ExpressionUUID->"4f2a6011-54d6-42ed-b145-c9213d088bd4"],
+Cell[31263, 789, 403, 8, 23, "Print",ExpressionUUID->"c45d250e-19e9-478a-af77-65386f04767e"],
+Cell[31669, 799, 575, 14, 26, "Message",ExpressionUUID->"d5391d3d-7e48-43d3-8774-21633f29c76f"],
+Cell[32247, 815, 2833, 47, 31, "Message",ExpressionUUID->"d4a2ba37-4919-40d6-a319-edd34f2344af"],
+Cell[35083, 864, 8905, 202, 44, "Print",ExpressionUUID->"a720eac5-a56b-4eb6-a28d-ee941b010d4b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44025, 1071, 3397, 86, 151, "Input",ExpressionUUID->"373cc605-3b3c-4d00-97b4-31289c83e841"],
+Cell[47425, 1159, 490, 11, 26, "Message",ExpressionUUID->"b3964d40-1393-4846-b5eb-6985955cb49c"],
+Cell[47918, 1172, 8345, 191, 31, "Print",ExpressionUUID->"d56f98f1-258e-4f68-895f-c1db8290f490"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56300, 1368, 8063, 208, 417, "Input",ExpressionUUID->"ee20decf-f8fd-49ba-bd9d-d8d081f668fb"],
+Cell[CellGroupData[{
+Cell[64388, 1580, 499, 9, 23, "Print",ExpressionUUID->"320ae962-0660-4929-8ed0-dbc5051f45dc"],
+Cell[64890, 1591, 8992, 203, 44, "Print",ExpressionUUID->"b91a8070-94f3-4124-afcd-6f94e02300d4"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
