@@ -1,0 +1,40 @@
+1 ../jplbin/            | Binary (1=yes); location of input files      (1)
+1060 1991               | minweek ; maxweek   (0 0 => all)             (2)
+0 all                   | 0=k3, 1=k4 ; Reference e.g. 'USN3', 'all'    (3)
+1 2                     | dif_order (0,1,2); poly order (0=no)         (4)
+0  ../PSD/  1280-1959   | Simulate? Location of PSD files. psd label   (5)
+0412a                   | Label for output files                       (6)
+=========================
+
+/home/ben/jpl30s/    | location of input files                       (1)
+/home/public/DM/data/jpl30s/    | location of input files            (1)
+
+
+1.
+First option: 1 for binary files, 0 for text
+Second: Location of input files, including jpl30s, and PRN_GPS_GPSDM file
+
+3.
+First: 0 for skewness, 1 for kurtosis
+Second: Which reference clock? eg. 'USN3' or 'AMC2'. Can be 'all'
+
+4.
+First: Difference order: 0=none, 1=first-order, 2=second-Order
+second: Subtract polynomial? 0=no, 1=first-order, 2=second-order etc.
+
+5.
+For simulating data.
+First: 0=don't simulate (use real data), 1=simulate
+Second: location of power spectrums
+third: PSD 'label' (usually "1280-1959")
+
+
+
+**********
+GPS weeks:
+1060 => ~May 2000. First week that 30s solutions available
+1147 => beginning of 2002
+1303 => beginning of 2005
+1280 => First available week that has ECI data.
+1881 => Last available week that has ECI data.
+0 is a wildcard - will go from 1060, to "end of 2018"
